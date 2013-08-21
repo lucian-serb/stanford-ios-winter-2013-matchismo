@@ -1,4 +1,10 @@
-stanford-ios-winter-2013-matchismo
-==================================
+Matchismo
+==============
 
-Card matching game from the Stanford University "Developing Applications for iOS" course of Winter 2013
+This is the "Matchismo" card matching game from the Stanford University "Developing Applications for iOS" course of Winter 2013.
+
+Links:
+==============
+* [Developing Applications for iOS - Stanford Winter 2013][link]
+
+[link]: https://itunes.apple.com/ro/course/coding-together-developing/id593208016
