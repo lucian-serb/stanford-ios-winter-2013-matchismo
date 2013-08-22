@@ -21,6 +21,7 @@
 		36658A7517C5563500AAE48D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36658A5717C5563400AAE48D /* UIKit.framework */; };
 		36658A7D17C5563500AAE48D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36658A7B17C5563500AAE48D /* InfoPlist.strings */; };
 		36658A7F17C5563500AAE48D /* MatchismoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36658A7E17C5563500AAE48D /* MatchismoTests.m */; };
+		36BA804817C68789002FB234 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BA804717C68789002FB234 /* Card.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		36658A7A17C5563500AAE48D /* MatchismoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MatchismoTests-Info.plist"; sourceTree = "<group>"; };
 		36658A7C17C5563500AAE48D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		36658A7E17C5563500AAE48D /* MatchismoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchismoTests.m; sourceTree = "<group>"; };
+		36BA804617C68789002FB234 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Model/Card.h; sourceTree = "<group>"; };
+		36BA804717C68789002FB234 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Model/Card.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 		36658A5917C5563400AAE48D /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
+				36BA804917C687AD002FB234 /* Model */,
 				36658A6217C5563400AAE48D /* CardGameAppDelegate.h */,
 				36658A6317C5563400AAE48D /* CardGameAppDelegate.m */,
 				36658A6517C5563400AAE48D /* Main.storyboard */,
@@ -150,6 +154,15 @@
 				36658A7B17C5563500AAE48D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36BA804917C687AD002FB234 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				36BA804617C68789002FB234 /* Card.h */,
+				36BA804717C68789002FB234 /* Card.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +266,7 @@
 				36658A6417C5563400AAE48D /* CardGameAppDelegate.m in Sources */,
 				36658A6A17C5563400AAE48D /* CardGameViewController.m in Sources */,
 				36658A6017C5563400AAE48D /* main.m in Sources */,
+				36BA804817C68789002FB234 /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +469,7 @@
 				36658A8417C5563500AAE48D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		36658A8517C5563500AAE48D /* Build configuration list for PBXNativeTarget "MatchismoTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +478,7 @@
 				36658A8717C5563500AAE48D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
