@@ -37,4 +37,18 @@
     return [self rankStrings].count - 1;
 }
 
+@synthesize suit = _suit;
+
+- (NSString *)suit
+{
+    return _suit ? _suit : @"?";
+}
+
+- (void)setSuit:(NSString *)suit
+{
+    if ([[PlayingCard validSuites] containsObject:suit]) {
+        _suit = suit;
+    }
+}
+
 @end
