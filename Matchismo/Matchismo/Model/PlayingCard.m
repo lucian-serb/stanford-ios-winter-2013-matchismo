@@ -10,4 +10,15 @@
 
 @implementation PlayingCard
 
++ (NSArray *)validSuites
+{
+    static NSArray *validSuites;
+    
+    if (!validSuites) {
+        validSuites = @[@"♥", @"♦", @"♠", @"♣"];
+    }
+    
+    return validSuites;
+}
+
 @end
