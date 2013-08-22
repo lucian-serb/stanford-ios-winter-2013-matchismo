@@ -49,8 +49,19 @@
 
 - (IBAction)flipCard:(UIButton *)sender
 {
+    if (!sender.isSelected)
+    {
+        PlayingCard *card = (PlayingCard *)[self.deck drawRandomCard];
+
+        if (card) {
+            [sender setTitle:card.contents forState:UIControlStateSelected];
+            self.flipCount++;
+        } else {
+            [sender setTitle:@"★" forState:UIControlStateSelected];
+        }
+    }
+    
     sender.selected = !sender.isSelected;
-    self.flipCount++;
 }
 
 @end
