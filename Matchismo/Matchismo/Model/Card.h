@@ -14,4 +14,6 @@
 @property (nonatomic, getter = isFaceUp) BOOL faceUp;
 @property (nonatomic, getter = isUnplayable ) BOOL unplayable;
 
+- (NSInteger)match:(NSArray *) otherCards;
+
 @end
