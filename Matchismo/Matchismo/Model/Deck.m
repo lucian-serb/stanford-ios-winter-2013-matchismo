@@ -18,8 +18,7 @@
 
 - (NSMutableArray *)cards
 {
-    if (!_cards)
-    {
+    if (!_cards) {
         _cards = [[NSMutableArray alloc] init];
     }
     
@@ -33,6 +32,19 @@
     } else {
         [self.cards addObject:card];
     }
+}
+
+- (Card *)drawRandomCard
+{
+    Card *randomCard;
+    
+    if (self.cards.count) {
+        NSUInteger index = arc4random() % self.cards.count;
+        randomCard = self.cards[index];
+        [self.cards removeObjectAtIndex:index];
+    }
+    
+    return randomCard;
 }
 
 @end
