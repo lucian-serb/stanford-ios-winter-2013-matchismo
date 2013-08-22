@@ -23,6 +23,7 @@
 		36658A7F17C5563500AAE48D /* MatchismoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36658A7E17C5563500AAE48D /* MatchismoTests.m */; };
 		36BA804817C68789002FB234 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BA804717C68789002FB234 /* Card.m */; };
 		36BA804C17C688FC002FB234 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BA804B17C688FC002FB234 /* Deck.m */; };
+		36BA805517C69A2A002FB234 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BA805417C69A2A002FB234 /* PlayingCard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		36BA804717C68789002FB234 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Model/Card.m; sourceTree = "<group>"; };
 		36BA804A17C688FC002FB234 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Deck.h; path = Model/Deck.h; sourceTree = "<group>"; };
 		36BA804B17C688FC002FB234 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Deck.m; path = Model/Deck.m; sourceTree = "<group>"; };
+		36BA805317C69A2A002FB234 /* PlayingCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCard.h; path = Model/PlayingCard.h; sourceTree = "<group>"; };
+		36BA805417C69A2A002FB234 /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCard.m; path = Model/PlayingCard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,8 @@
 				36BA804717C68789002FB234 /* Card.m */,
 				36BA804A17C688FC002FB234 /* Deck.h */,
 				36BA804B17C688FC002FB234 /* Deck.m */,
+				36BA805317C69A2A002FB234 /* PlayingCard.h */,
+				36BA805417C69A2A002FB234 /* PlayingCard.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36BA805517C69A2A002FB234 /* PlayingCard.m in Sources */,
 				36BA804C17C688FC002FB234 /* Deck.m in Sources */,
 				36658A6417C5563400AAE48D /* CardGameAppDelegate.m in Sources */,
 				36658A6A17C5563400AAE48D /* CardGameViewController.m in Sources */,
