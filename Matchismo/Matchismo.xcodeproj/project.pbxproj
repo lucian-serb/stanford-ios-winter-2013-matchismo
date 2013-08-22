@@ -22,6 +22,7 @@
 		36658A7D17C5563500AAE48D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36658A7B17C5563500AAE48D /* InfoPlist.strings */; };
 		36658A7F17C5563500AAE48D /* MatchismoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36658A7E17C5563500AAE48D /* MatchismoTests.m */; };
 		36BA804817C68789002FB234 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BA804717C68789002FB234 /* Card.m */; };
+		36BA804C17C688FC002FB234 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BA804B17C688FC002FB234 /* Deck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		36658A7E17C5563500AAE48D /* MatchismoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchismoTests.m; sourceTree = "<group>"; };
 		36BA804617C68789002FB234 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Model/Card.h; sourceTree = "<group>"; };
 		36BA804717C68789002FB234 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Model/Card.m; sourceTree = "<group>"; };
+		36BA804A17C688FC002FB234 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Deck.h; path = Model/Deck.h; sourceTree = "<group>"; };
+		36BA804B17C688FC002FB234 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Deck.m; path = Model/Deck.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +164,8 @@
 			children = (
 				36BA804617C68789002FB234 /* Card.h */,
 				36BA804717C68789002FB234 /* Card.m */,
+				36BA804A17C688FC002FB234 /* Deck.h */,
+				36BA804B17C688FC002FB234 /* Deck.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36BA804C17C688FC002FB234 /* Deck.m in Sources */,
 				36658A6417C5563400AAE48D /* CardGameAppDelegate.m in Sources */,
 				36658A6A17C5563400AAE48D /* CardGameViewController.m in Sources */,
 				36658A6017C5563400AAE48D /* main.m in Sources */,
