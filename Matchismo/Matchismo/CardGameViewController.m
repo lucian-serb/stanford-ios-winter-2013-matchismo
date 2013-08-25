@@ -8,13 +8,13 @@
 
 #import "CardGameViewController.h"
 #import "PlayingCardDeck.h"
-#import "PlayingCard.h"
+#import "Card.h"
 
 @interface CardGameViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (nonatomic) NSInteger flipCount;
-@property (nonatomic) PlayingCardDeck *deck;
+@property (nonatomic) Deck *deck;
 
 @end
 
@@ -32,7 +32,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (PlayingCardDeck *)deck
+- (Deck *)deck
 {
     if (!_deck) {
         _deck = [[PlayingCardDeck alloc] init];
@@ -51,7 +51,7 @@
 {
     if (!sender.isSelected)
     {
-        PlayingCard *card = (PlayingCard *)[self.deck drawRandomCard];
+        Card *card = [self.deck drawRandomCard];
 
         if (card) {
             [sender setTitle:card.contents forState:UIControlStateSelected];
