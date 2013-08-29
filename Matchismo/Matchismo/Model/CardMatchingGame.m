@@ -26,4 +26,28 @@
     return _cards;
 }
 
+- (id)init
+{
+    return nil;
+}
+
+- (id)initWithCardCount:(NSUInteger)cardCount usingDeck:(Deck *)deck
+{
+    self = [super init];
+    
+    if (self) {
+        for (NSUInteger i = 0; i < cardCount; i++) {
+            Card *card = [deck drawRandomCard];
+            
+            if (!card) {
+                return nil;
+            }
+            
+            self.cards[i] = card;
+        }
+    }
+    
+    return self;
+}
+
 @end
