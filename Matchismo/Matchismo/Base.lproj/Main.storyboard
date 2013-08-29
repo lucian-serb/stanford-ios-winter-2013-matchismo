@@ -253,6 +253,18 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="flipsLabel" destination="iZP-Qd-Jat" id="bvz-Yf-XcQ"/>
+                        <outletCollection property="cardButtons" destination="Ebi-pk-wMh" id="mFN-Ea-kL5"/>
+                        <outletCollection property="cardButtons" destination="zXm-vB-PJH" id="Jr5-lV-eGB"/>
+                        <outletCollection property="cardButtons" destination="A4O-nx-QHp" id="m3N-hg-LZC"/>
+                        <outletCollection property="cardButtons" destination="ug8-GO-aBF" id="A4M-lq-aln"/>
+                        <outletCollection property="cardButtons" destination="Z5y-Lt-0ln" id="aLe-Qu-uq8"/>
+                        <outletCollection property="cardButtons" destination="mmb-v4-Eri" id="QQQ-xj-LK7"/>
+                        <outletCollection property="cardButtons" destination="MhK-lc-jv7" id="aaq-fw-xfx"/>
+                        <outletCollection property="cardButtons" destination="z7r-Ku-rgJ" id="Amx-gB-Mml"/>
+                        <outletCollection property="cardButtons" destination="xdS-dI-gLi" id="2by-nU-uRN"/>
+                        <outletCollection property="cardButtons" destination="zgV-nr-40n" id="jnI-JO-LyX"/>
+                        <outletCollection property="cardButtons" destination="CCm-Hv-lRM" id="6O3-iX-LGd"/>
+                        <outletCollection property="cardButtons" destination="jwL-bV-qXM" id="cQc-d2-AYj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -265,6 +277,7 @@
             <relationships>
                 <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
+                <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
             </relationships>
         </class>
     </classes>
