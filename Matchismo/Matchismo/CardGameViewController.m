@@ -48,6 +48,12 @@
     return _game;
 }
 
+- (void)setCardButtons:(NSArray *)cardButtons
+{
+    _cardButtons = cardButtons;
+    [self updateUI];
+}
+
 - (void)setFlipCount:(NSInteger)flipCount
 {
     _flipCount = flipCount;
