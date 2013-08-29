@@ -45,6 +45,7 @@
         cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
     }
     
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
 }
 
 - (CardMatchingGame *)game
