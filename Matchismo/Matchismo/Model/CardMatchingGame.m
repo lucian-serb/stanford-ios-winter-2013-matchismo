@@ -8,6 +8,21 @@
 
 #import "CardMatchingGame.h"
 
+@interface CardMatchingGame()
+
+@property (nonatomic) NSMutableArray *cards;
+
+@end
+
 @implementation CardMatchingGame
+
+- (NSMutableArray *)cards
+{
+    if (!_cards) {
+        _cards = [[NSMutableArray alloc] init];
+    }
+
+    return _cards;
+}
 
 @end
