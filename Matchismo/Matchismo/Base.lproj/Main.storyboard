@@ -260,6 +260,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="flipsLabel" destination="iZP-Qd-Jat" id="bvz-Yf-XcQ"/>
+                        <outlet property="scoreLabel" destination="78o-1a-t0I" id="l5L-m7-PAh"/>
                         <outletCollection property="cardButtons" destination="Ebi-pk-wMh" id="mFN-Ea-kL5"/>
                         <outletCollection property="cardButtons" destination="zXm-vB-PJH" id="Jr5-lV-eGB"/>
                         <outletCollection property="cardButtons" destination="A4O-nx-QHp" id="m3N-hg-LZC"/>
@@ -284,6 +285,7 @@
             <relationships>
                 <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
             </relationships>
         </class>
