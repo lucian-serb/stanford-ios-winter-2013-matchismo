@@ -33,6 +33,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)UpdateUI
+{
+    
+}
+
 - (CardMatchingGame *)game
 {
     if (!_game) {
