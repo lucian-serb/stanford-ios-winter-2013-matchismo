@@ -89,6 +89,7 @@
         if (!card.isFaceUp) {
             [self.flippedCards removeAllObjects];
             [self.flippedCards addObject:card];
+            self.gameStatus = 0;
             for (Card *otherCard in self.cards) {
                 if (!otherCard.isUnplayable && otherCard.isFaceUp) {
                     [self.flippedCards addObject:otherCard];
@@ -98,9 +99,11 @@
                         otherCard.unplayable = YES;
                         card.unplayable = YES;
                         self.flipScore = matchScore * MATCH_BONUS;
+                        self.gameStatus = 1;
                     } else {
                         otherCard.faceUp = NO;
                         self.flipScore = MISMATCH_PENALTY;
+                        self.gameStatus = -1;
                     }
                     
                     break;
