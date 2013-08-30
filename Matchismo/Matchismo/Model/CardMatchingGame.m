@@ -14,11 +14,22 @@
 @property (nonatomic) NSInteger score;
 @property (readwrite, nonatomic) NSMutableArray *flippedCards;
 @property (readwrite, nonatomic) NSInteger flipScore;
+@property (readwrite, nonatomic) NSInteger gameStatus;
 
 @end
 
 @implementation CardMatchingGame
 
+- (void)setGameStatus:(NSInteger)gameStatus
+{
+    if (gameStatus < 0) {
+        _gameStatus = -1;
+    } else if (gameStatus > 0) {
+        _gameStatus = 1;
+    } else {
+        _gameStatus = 0;
+    }
+}
 - (NSMutableArray *)cards
 {
     if (!_cards) {
