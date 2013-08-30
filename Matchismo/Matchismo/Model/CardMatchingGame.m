@@ -90,6 +90,7 @@
         if (!card.isFaceUp) {
             [self.flippedCards removeAllObjects];
             [self.flippedCards addObject:card];
+            self.flipScore = 0;
             self.gameStatus = 0;
             
             for (Card *otherCard in self.cards) {
