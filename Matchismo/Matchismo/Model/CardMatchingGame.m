@@ -87,8 +87,11 @@
     
     if (!card.isUnplayable) {
         if (!card.isFaceUp) {
+            [self.flippedCards removeAllObjects];
+            [self.flippedCards addObject:card];
             for (Card *otherCard in self.cards) {
                 if (!otherCard.isUnplayable && otherCard.isFaceUp) {
+                    [self.flippedCards addObject:otherCard];
                     NSInteger matchScore = [card match:@[otherCard]];
                     
                     if (matchScore) {
