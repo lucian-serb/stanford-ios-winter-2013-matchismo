@@ -68,8 +68,6 @@
     return (index < [self.cards count]) ? self.cards[index] : nil;
 }
 
-#define FLIP_COST 1
-#define MISMATCH_PENALTY 2
 - (NSArray *)flippedCards
 {
     if (!_flippedCards) {
@@ -79,6 +77,8 @@
     return _flippedCards;
 }
 
+#define FLIP_COST -1
+#define MISMATCH_PENALTY -2
 #define MATCH_BONUS 4
 
 - (void)flipCardAtIndex:(NSUInteger)index
