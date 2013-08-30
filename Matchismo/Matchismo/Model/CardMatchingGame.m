@@ -94,17 +94,18 @@
                     if (matchScore) {
                         otherCard.unplayable = YES;
                         card.unplayable = YES;
-                        self.score += matchScore * MATCH_BONUS;
+                        self.flipScore = matchScore * MATCH_BONUS;
                     } else {
                         otherCard.faceUp = NO;
-                        self.score -= MISMATCH_PENALTY;
+                        self.flipScore = MISMATCH_PENALTY;
                     }
                     
                     break;
                 }
             }
             
-            self.score -= FLIP_COST;
+            self.flipScore -= FLIP_COST;
+            self.score += self.flipScore;
         }
         
         card.faceUp = !card.isFaceUp;
