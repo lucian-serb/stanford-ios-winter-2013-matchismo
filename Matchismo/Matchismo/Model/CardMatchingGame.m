@@ -13,6 +13,7 @@
 @property (nonatomic) NSMutableArray *cards;
 @property (nonatomic) NSInteger score;
 @property (readwrite, nonatomic) NSMutableArray *flippedCards;
+@property (readwrite, nonatomic) NSInteger flipScore;
 
 @end
 
