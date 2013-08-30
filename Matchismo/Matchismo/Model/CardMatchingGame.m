@@ -12,6 +12,7 @@
 
 @property (nonatomic) NSMutableArray *cards;
 @property (nonatomic) NSInteger score;
+@property (readwrite, nonatomic) NSMutableArray *flippedCards;
 
 @end
 
@@ -57,6 +58,15 @@
 
 #define FLIP_COST 1
 #define MISMATCH_PENALTY 2
+- (NSArray *)flippedCards
+{
+    if (!_flippedCards) {
+        _flippedCards = [[NSMutableArray alloc] init];
+    }
+    
+    return _flippedCards;
+}
+
 #define MATCH_BONUS 4
 
 - (void)flipCardAtIndex:(NSUInteger)index
