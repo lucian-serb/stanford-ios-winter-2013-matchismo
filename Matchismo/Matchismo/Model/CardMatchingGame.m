@@ -30,6 +30,7 @@
         _gameStatus = 0;
     }
 }
+
 - (NSMutableArray *)cards
 {
     if (!_cards) {
@@ -90,6 +91,7 @@
             [self.flippedCards removeAllObjects];
             [self.flippedCards addObject:card];
             self.gameStatus = 0;
+            
             for (Card *otherCard in self.cards) {
                 if (!otherCard.isUnplayable && otherCard.isFaceUp) {
                     [self.flippedCards addObject:otherCard];
@@ -105,7 +107,7 @@
                         self.flipScore = MISMATCH_PENALTY;
                         self.gameStatus = -1;
                     }
-                    
+
                     break;
                 }
             }
