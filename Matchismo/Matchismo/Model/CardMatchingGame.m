@@ -112,7 +112,7 @@
                 }
             }
             
-            self.flipScore -= FLIP_COST;
+            self.flipScore += FLIP_COST;
             self.score += self.flipScore;
         }
         
