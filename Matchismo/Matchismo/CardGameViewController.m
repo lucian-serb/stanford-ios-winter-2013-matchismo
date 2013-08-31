@@ -136,6 +136,8 @@
     } else if (sender.selectedSegmentIndex == 1) {
         self.gameMode = 3;
     }
+    
+    [self.game changeNoMatchingCardsTo:self.gameMode];
 }
 
 @end
