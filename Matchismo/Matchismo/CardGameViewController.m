@@ -111,4 +111,11 @@
     [self updateUI];
 }
 
+- (IBAction)deal:(id)sender
+{
+    self.game = nil;
+    self.flipCount = 0;
+    [self updateUI];
+}
+
 @end
