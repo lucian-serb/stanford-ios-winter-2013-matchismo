@@ -46,7 +46,9 @@
     return nil;
 }
 
-- (id)initWithCardCount:(NSUInteger)cardCount usingDeck:(Deck *)deck
+- (id)initWithCardCount:(NSUInteger)cardCount
+        noMatchingCards:(NSUInteger)noCards
+              usingDeck:(Deck *)deck
 {
     self = [super init];
     
@@ -59,6 +61,14 @@
             }
             
             self.cards[i] = card;
+        }
+        
+        if (noCards < 2) {
+            self.noMatchingCards = 2;
+        } else if (noCards > cardCount) {
+            self.noMatchingCards = cardCount;
+        } else {
+            self.noMatchingCards = noCards;
         }
     }
     
