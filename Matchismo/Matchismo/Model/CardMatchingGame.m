@@ -11,7 +11,7 @@
 @interface CardMatchingGame()
 
 @property (nonatomic) NSMutableArray *cards;
-@property (nonatomic) NSInteger score;
+@property (readwrite, nonatomic) NSInteger score;
 @property (readwrite, nonatomic) NSMutableArray *flippedCards;
 @property (readwrite, nonatomic) NSInteger flipScore;
 @property (readwrite, nonatomic) NSInteger gameStatus;
