@@ -112,6 +112,11 @@
 - (IBAction)flipCard:(UIButton *)sender
 {
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
+    
+    if (self.flipCount == 0) {
+        self.gameModeSelector.enabled = NO;
+    }
+    
     self.flipCount++;
     [self updateUI];
 }
@@ -120,6 +125,7 @@
 {
     self.game = nil;
     self.flipCount = 0;
+    self.gameModeSelector.enabled = YES;
     [self updateUI];
 }
 
