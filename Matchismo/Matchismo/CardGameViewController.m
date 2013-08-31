@@ -39,6 +39,8 @@
 
 - (void)updateUI
 {
+    UIImage *cardBack = [UIImage imageNamed:@"cardback.jpg"];
+    
     for (UIButton *cardButton in self.cardButtons) {
         Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
         [cardButton setTitle:card.contents forState:UIControlStateSelected];
@@ -46,6 +48,12 @@
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
         cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
+        
+        if (!cardButton.selected) {
+            [cardButton setBackgroundImage:cardBack forState:UIControlStateNormal];
+        } else {
+            [cardButton setBackgroundImage:nil forState:UIControlStateNormal];
+        }
     }
     
     if ([self.game.flippedCards count] > 0) {
