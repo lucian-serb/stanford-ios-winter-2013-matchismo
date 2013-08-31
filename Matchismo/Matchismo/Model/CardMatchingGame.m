@@ -100,30 +100,41 @@
     if (!card.isUnplayable) {
         if (!card.isFaceUp) {
             [self.flippedCards removeAllObjects];
-            [self.flippedCards addObject:card];
             self.flipScore = 0;
             self.gameStatus = 0;
             
             for (Card *otherCard in self.cards) {
                 if (!otherCard.isUnplayable && otherCard.isFaceUp) {
                     [self.flippedCards addObject:otherCard];
-                    NSInteger matchScore = [card match:@[otherCard]];
                     
-                    if (matchScore) {
-                        otherCard.unplayable = YES;
-                        card.unplayable = YES;
-                        self.flipScore = matchScore * MATCH_BONUS;
-                        self.gameStatus = 1;
-                    } else {
-                        otherCard.faceUp = NO;
-                        self.flipScore = MISMATCH_PENALTY;
-                        self.gameStatus = -1;
+                    if ([self.flippedCards count] == self.noMatchingCards - 1) {
+                        break;
                     }
-
-                    break;
                 }
             }
             
+            if ([self.flippedCards count] == self.noMatchingCards - 1) {
+                NSInteger matchScore = [card match:self.flippedCards];
+                
+                if (matchScore) {
+                    for (Card *otherCard in self.flippedCards) {
+                        otherCard.unplayable = YES;
+                    }
+                    
+                    card.unplayable = YES;
+                    self.flipScore = matchScore * MATCH_BONUS;
+                    self.gameStatus = 1;
+                } else {
+                    for (Card *otherCard in self.flippedCards) {
+                        otherCard.faceUp = NO;
+                    }
+                    
+                    self.flipScore = MISMATCH_PENALTY;
+                    self.gameStatus = -1;
+                }
+            }
+            
+            [self.flippedCards addObject:card];
             self.flipScore += FLIP_COST;
             self.score += self.flipScore;
         }
