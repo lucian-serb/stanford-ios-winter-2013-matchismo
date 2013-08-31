@@ -18,6 +18,7 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
+@property (nonatomic) NSUInteger gameMode;
 
 @end
 
@@ -122,7 +123,11 @@
 
 - (IBAction)changeGameMode:(UISegmentedControl *)sender
 {
-
+    if (sender.selectedSegmentIndex == 0) {
+        self.gameMode = 2;
+    } else if (sender.selectedSegmentIndex == 1) {
+        self.gameMode = 3;
+    }
 }
 
 @end
