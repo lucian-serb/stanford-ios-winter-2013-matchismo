@@ -395,7 +395,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cardback.jpg" width="90.684638977050781" height="127"/>
+        <image name="cardback.jpg" width="7.6871747970581055" height="9.7290802001953125"/>
     </resources>
     <classes>
         <class className="CardGameViewController" superclassName="UIViewController">
