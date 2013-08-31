@@ -75,6 +75,17 @@
     return self;
 }
 
+- (void)changeNoMatchingCardsTo:(NSUInteger)noCards
+{
+    if (noCards < 2) {
+        self.noMatchingCards = 2;
+    } else if (noCards > [self.cards count]) {
+        self.noMatchingCards = [self.cards count];
+    } else {
+        self.noMatchingCards = noCards;
+    }
+}
+
 - (Card*)cardAtIndex:(NSUInteger)index
 {
     return (index < [self.cards count]) ? self.cards[index] : nil;

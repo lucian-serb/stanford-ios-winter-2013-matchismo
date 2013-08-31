@@ -19,6 +19,8 @@
 
 - (Card*)cardAtIndex:(NSUInteger)index;
 
+- (void)changeNoMatchingCardsTo:(NSUInteger)noCards;
+
 @property (readonly, nonatomic) NSInteger score;
 @property (readonly, nonatomic) NSMutableArray *flippedCards;
 @property (readonly, nonatomic) NSInteger flipScore;
