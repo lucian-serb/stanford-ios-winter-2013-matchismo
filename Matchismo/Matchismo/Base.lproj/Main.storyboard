@@ -352,6 +352,14 @@
                                     <action selector="deal:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YJJ-wZ-Dd8"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="MPU-uw-7wS">
+                                <rect key="frame" x="20" y="372" width="280" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="2-card-match-mode"/>
+                                    <segment title="3-card-match-mode"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
