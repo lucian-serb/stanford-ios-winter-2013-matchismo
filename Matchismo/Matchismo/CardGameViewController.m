@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property (nonatomic) NSUInteger gameMode;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *gameModeSelector;
 
 @end
 
