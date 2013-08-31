@@ -89,6 +89,7 @@
 {
     if (!_game) {
         _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
+                                            noMatchingCards:self.gameMode
                                                   usingDeck:[[PlayingCardDeck alloc] init]];
     }
     
