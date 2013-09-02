@@ -89,6 +89,9 @@
         }
         
         [self.resultArray addObject:text];
+        self.historySlider.enabled = YES;
+        self.historySlider.maximumValue = [self.resultArray count] - 1;
+        self.historySlider.value = self.historySlider.maximumValue;
         self.resultLabel.text = text;
     } else {
         NSString *text = @"Start by flipping a card.";
