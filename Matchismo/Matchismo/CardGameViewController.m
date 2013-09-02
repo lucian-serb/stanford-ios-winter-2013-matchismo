@@ -99,6 +99,7 @@
         [self.resultArray addObject:text];
     }
     
+    self.resultLabel.alpha = 1.0;
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
 }
 
@@ -171,6 +172,12 @@
 
 - (IBAction)moveThroughHistory:(UISlider *)sender
 {
+    if (round(sender.value) < [self.resultArray count] - 1) {
+        self.resultLabel.alpha = 0.5;
+    } else {
+        self.resultLabel.alpha = 1.0;
+    }
+    
     self.resultLabel.text = self.resultArray[(int)round(sender.value)];
 }
 
