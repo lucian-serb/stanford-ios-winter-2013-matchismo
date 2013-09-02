@@ -87,6 +87,7 @@
             }
         }
         
+        [self.resultArray addObject:text];
         self.resultLabel.text = text;
     } else {
         self.resultLabel.text = @"Start by flipping a card.";
@@ -144,6 +145,7 @@
     self.game = nil;
     self.flipCount = 0;
     self.gameModeSelector.enabled = YES;
+    self.resultArray = nil;
     [self updateUI];
 }
 
