@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property (nonatomic) NSUInteger gameMode;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *gameModeSelector;
+@property (strong, nonatomic) NSMutableArray *resultArray;
 
 @end
 
@@ -92,6 +93,15 @@
     }
     
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+}
+
+- (NSMutableArray *)resultArray
+{
+    if (!_resultArray) {
+        _resultArray = [[NSMutableArray alloc] init];
+    }
+    
+    return _resultArray;
 }
 
 - (CardMatchingGame *)game
