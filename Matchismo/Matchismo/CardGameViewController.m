@@ -88,9 +88,14 @@
             }
         }
         
-        [self.resultArray addObject:text];
         self.historySlider.enabled = YES;
-        self.historySlider.maximumValue = [self.resultArray count] - 1;
+        Card *card = [self.game.flippedCards lastObject];
+        
+        if (card.isFaceUp) {
+            [self.resultArray addObject:text];
+            self.historySlider.maximumValue = [self.resultArray count] - 1;
+        }
+        
         self.historySlider.value = self.historySlider.maximumValue;
         self.resultLabel.text = text;
     } else {
