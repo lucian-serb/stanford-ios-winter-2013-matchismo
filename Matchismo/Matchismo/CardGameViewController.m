@@ -91,7 +91,9 @@
         [self.resultArray addObject:text];
         self.resultLabel.text = text;
     } else {
-        self.resultLabel.text = @"Start by flipping a card.";
+        NSString *text = @"Start by flipping a card.";
+        self.resultLabel.text = text;
+        [self.resultArray addObject:text];
     }
     
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
