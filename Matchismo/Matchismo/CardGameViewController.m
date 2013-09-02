@@ -21,6 +21,7 @@
 @property (nonatomic) NSUInteger gameMode;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *gameModeSelector;
 @property (strong, nonatomic) NSMutableArray *resultArray;
+@property (weak, nonatomic) IBOutlet UISlider *historySlider;
 
 @end
 
