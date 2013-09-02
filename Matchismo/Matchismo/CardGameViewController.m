@@ -169,4 +169,9 @@
     [self.game changeNoMatchingCardsTo:self.gameMode];
 }
 
+- (IBAction)moveThroughHistory:(UISlider *)sender
+{
+    self.resultLabel.text = self.resultArray[(int)round(sender.value)];
+}
+
 @end
