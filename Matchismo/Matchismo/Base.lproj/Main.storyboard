@@ -339,6 +339,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="display" destination="WMk-7T-TmQ" id="7eU-fb-Xcj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mva-bH-DF5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -357,6 +360,9 @@
         </class>
         <class className="GameResultsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameResultsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="display" candidateClass="UITextView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

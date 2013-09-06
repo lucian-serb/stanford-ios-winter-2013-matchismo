@@ -10,6 +10,8 @@
 
 @interface GameResultsViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextView *display;
+
 @end
 
 @implementation GameResultsViewController
