@@ -8,6 +8,13 @@
 
 #import "GameResults.h"
 
+@interface GameResults ()
+
+@property (readwrite, nonatomic) NSDate *start;
+@property (readwrite, nonatomic) NSDate *stop;
+
+@end
+
 @implementation GameResults
 
 @end
