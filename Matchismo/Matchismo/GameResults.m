@@ -17,7 +17,7 @@
 
 @implementation GameResults
 
-#define ALL_RESULTS_KEY @"Game Results_ALL"
+#define ALL_RESULTS_KEY @"GameResults_ALL"
 
 - (void)synchronize
 {
