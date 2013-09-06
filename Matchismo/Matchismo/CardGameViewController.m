@@ -9,6 +9,7 @@
 #import "CardGameViewController.h"
 #import "CardMatchingGame.h"
 #import "PlayingCardDeck.h"
+#import "GameResults.h"
 
 @interface CardGameViewController ()
 
@@ -17,6 +18,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (strong, nonatomic) GameResults *gameResults;
 
 @end
 
@@ -46,6 +48,15 @@
     }
     
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+}
+
+- (GameResults *)gameResults
+{
+    if (!_gameResults) {
+        _gameResults = [[GameResults alloc] init];
+    }
+    
+    return _gameResults;
 }
 
 - (CardMatchingGame *)game
