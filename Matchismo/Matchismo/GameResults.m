@@ -98,6 +98,7 @@
 {
     _score = score;
     self.stop = [NSDate date];
+    [self synchronize];
 }
 
 @end
