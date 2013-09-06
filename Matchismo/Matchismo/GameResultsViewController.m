@@ -7,6 +7,7 @@
 //
 
 #import "GameResultsViewController.h"
+#import "GameResults.h"
 
 @interface GameResultsViewController ()
 
@@ -49,6 +50,17 @@
 {
     [super viewWillAppear:animated];
     [self updateUI];
+}
+
+- (void)updateUI
+{
+    NSString *displayText = @"";
+
+    for (GameResults *gameResults in [GameResults allGamesResults]) {
+        displayText = [displayText stringByAppendingFormat:@"Score %d (%@, %0f)\n", gameResults.score, gameResults.start, gameResults.duration];
+    }
+    
+    self.display.text = displayText;
 }
 
 @end
