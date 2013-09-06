@@ -17,6 +17,22 @@
 
 @implementation GameResults
 
+#define ALL_RESULTS_KEY @"Game_Results_ALL"
+
+- (void)synchronize
+{
+    NSMutableDictionary *mutableGameResultsFromUserDefaults = [[[NSUserDefaults standardUserDefaults] dictionaryForKey: ALL_RESULTS_KEY] mutableCopy];
+    
+    if (!mutableGameResultsFromUserDefaults) {
+        mutableGameResultsFromUserDefaults = [[NSMutableDictionary alloc] init];
+    }
+    
+    mutableGameResultsFromUserDefaults[[self.start description]] = [self asPropertyList];
+    [[NSUserDefaults standardUserDefaults] setObject:mutableGameResultsFromUserDefaults forKey:ALL_RESULTS_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
+
 - (id)init
 {
     self = [super init];
