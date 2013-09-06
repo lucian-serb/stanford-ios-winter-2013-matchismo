@@ -17,7 +17,7 @@
 
 @implementation GameResults
 
-#define ALL_RESULTS_KEY @"Game_Results_ALL"
+#define ALL_RESULTS_KEY @"GameResults_ALL"
 
 - (void)synchronize
 {
@@ -31,6 +31,15 @@
     [[NSUserDefaults standardUserDefaults] setObject:mutableGameResultsFromUserDefaults forKey:ALL_RESULTS_KEY];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+}
+
+#define START_KEY @"StartDate"
+#define STOP_KEY @"StopDate"
+#define SCORE_KEY @"Score"
+
+- (id)asPropertyList
+{
+    return @{START_KEY: self.start, STOP_KEY: self.stop, SCORE_KEY: @(self.score)};
 }
 
 - (id)init
