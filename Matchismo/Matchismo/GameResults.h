@@ -10,6 +10,8 @@
 
 @interface GameResults : NSObject
 
++ (NSArray *)allGamesResults;
+
 @property (readonly, nonatomic) NSDate *start;
 @property (readonly, nonatomic) NSDate *stop;
 @property (readonly, nonatomic) NSTimeInterval duration;
