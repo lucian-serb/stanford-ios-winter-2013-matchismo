@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3614337417CF84630010CE48 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3614337317CF84630010CE48 /* CardMatchingGame.m */; };
+		364051FE17D9F80700CD59E6 /* GameResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364051FD17D9F80700CD59E6 /* GameResultsViewController.m */; };
 		36658A5417C5563400AAE48D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36658A5317C5563400AAE48D /* Foundation.framework */; };
 		36658A5617C5563400AAE48D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36658A5517C5563400AAE48D /* CoreGraphics.framework */; };
 		36658A5817C5563400AAE48D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36658A5717C5563400AAE48D /* UIKit.framework */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		3614337217CF84630010CE48 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
 		3614337317CF84630010CE48 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
+		364051FC17D9F80700CD59E6 /* GameResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameResultsViewController.h; sourceTree = "<group>"; };
+		364051FD17D9F80700CD59E6 /* GameResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameResultsViewController.m; sourceTree = "<group>"; };
 		36658A5017C5563400AAE48D /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36658A5317C5563400AAE48D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		36658A5517C5563400AAE48D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +134,8 @@
 				36658A6217C5563400AAE48D /* CardGameAppDelegate.h */,
 				36658A6317C5563400AAE48D /* CardGameAppDelegate.m */,
 				36658A6517C5563400AAE48D /* Main.storyboard */,
+				364051FC17D9F80700CD59E6 /* GameResultsViewController.h */,
+				364051FD17D9F80700CD59E6 /* GameResultsViewController.m */,
 				36658A6817C5563400AAE48D /* CardGameViewController.h */,
 				36658A6917C5563400AAE48D /* CardGameViewController.m */,
 				36658A6B17C5563400AAE48D /* Images.xcassets */,
@@ -284,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36BA805517C69A2A002FB234 /* PlayingCard.m in Sources */,
+				364051FE17D9F80700CD59E6 /* GameResultsViewController.m in Sources */,
 				36BA804C17C688FC002FB234 /* Deck.m in Sources */,
 				36658A6417C5563400AAE48D /* CardGameAppDelegate.m in Sources */,
 				36658A6A17C5563400AAE48D /* CardGameViewController.m in Sources */,
