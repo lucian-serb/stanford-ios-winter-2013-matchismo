@@ -81,6 +81,14 @@
     self.flipsLabel.text = [NSString stringWithFormat:@"Flips: %d", self.flipCount];
 }
 
+- (IBAction)Deal
+{
+    self.game = nil;
+    self.gameResults = nil;
+    self.flipCount = 0;
+    [self updateUI]; 
+}
+
 - (IBAction)flipCard:(UIButton *)sender
 {
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
