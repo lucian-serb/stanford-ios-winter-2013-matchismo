@@ -83,26 +83,17 @@
 
 + (NSArray *)allGamesResultsSortedByDate
 {
-    NSMutableArray *allResults;
-    allResults = [[[self allGamesResults] sortedArrayUsingSelector:@selector(compareDate:)] mutableCopy];
-    
-    return allResults;
+    return [[self allGamesResults] sortedArrayUsingSelector:@selector(compareDate:)];
 }
 
 + (NSArray *)allGamesResultsSortedByDuration
 {
-    NSMutableArray *allResults;
-    allResults = [[[self allGamesResults] sortedArrayUsingSelector:@selector(compareDuration:)] mutableCopy];
-    
-    return allResults;
+    return [[self allGamesResults] sortedArrayUsingSelector:@selector(compareDuration:)];
 }
 
 + (NSArray *)allGamesResultsSortedByScore
 {
-    NSMutableArray *allResults;
-    allResults = [[[self allGamesResults] sortedArrayUsingSelector:@selector(compareScore:)] mutableCopy];
-    
-    return allResults;
+    return [[self allGamesResults] sortedArrayUsingSelector:@selector(compareScore:)];
 }
 
 - (id)initFromPropertyList:(id)plist
