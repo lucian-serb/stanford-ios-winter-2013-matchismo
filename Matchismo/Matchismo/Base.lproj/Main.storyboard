@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-1456" y="-386"/>
         </scene>
-        <!--Card Game View Controller - Item-->
+        <!--Card Game View Controller - Game-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="CardGameViewController" sceneMemberID="viewController">
@@ -293,7 +293,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Item" id="DHi-Fi-ycD"/>
+                    <tabBarItem key="tabBarItem" title="Game" id="DHi-Fi-ycD"/>
                     <connections>
                         <outlet property="flipsLabel" destination="iZP-Qd-Jat" id="bvz-Yf-XcQ"/>
                         <outlet property="scoreLabel" destination="78o-1a-t0I" id="l5L-m7-PAh"/>
@@ -315,7 +315,7 @@
             </objects>
             <point key="canvasLocation" x="-912" y="-749"/>
         </scene>
-        <!--Game Results View Controller - Item-->
+        <!--Game Results View Controller - Scores-->
         <scene sceneID="Zzf-sD-uRi">
             <objects>
                 <viewController id="23P-tY-FRb" customClass="GameResultsViewController" sceneMemberID="viewController">
@@ -376,7 +376,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Item" id="ODg-Vo-QII"/>
+                    <tabBarItem key="tabBarItem" title="Scores" id="ODg-Vo-QII"/>
                     <connections>
                         <outlet property="display" destination="WMk-7T-TmQ" id="7eU-fb-Xcj"/>
                     </connections>
