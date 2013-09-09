@@ -11,6 +11,9 @@
 @interface GameResults : NSObject
 
 + (NSArray *)allGamesResults;
++ (NSArray *)allGamesResultsSortedByDate;
++ (NSArray *)allGamesResultsSortedByDuration;
++ (NSArray *)allGamesResultsSortedByScore;
 
 @property (readonly, nonatomic) NSDate *start;
 @property (readonly, nonatomic) NSDate *stop;

@@ -54,6 +54,21 @@
     return allResults;
 }
 
++ (NSArray *)allGamesResultsSortedByDate
+{
+    return nil;
+}
+
++ (NSArray *)allGamesResultsSortedByDuration
+{
+    return nil;
+}
+
++ (NSArray *)allGamesResultsSortedByScore
+{
+    return nil;
+}
+
 - (id)initFromPropertyList:(id)plist
 {
     self = [self init];
