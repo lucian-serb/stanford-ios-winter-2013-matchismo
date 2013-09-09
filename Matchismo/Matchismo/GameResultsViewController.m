@@ -72,8 +72,12 @@ typedef enum {BY_DATE, BY_DURATION, BY_SCORE, ENUM_NR_ITEMS} SORT_TYPE_T;
             break;
     }
 
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    
     for (GameResults *gameResults in allGameResults) {
-        displayText = [displayText stringByAppendingFormat:@"Score %d (%@, %.2f)\n", gameResults.score, gameResults.start, gameResults.duration];
+        displayText = [displayText stringByAppendingFormat:@"Score: %d (%@, %.0fs)\n", gameResults.score, [dateFormatter stringFromDate:gameResults.start], gameResults.duration];
     }
     
     self.display.text = displayText;
