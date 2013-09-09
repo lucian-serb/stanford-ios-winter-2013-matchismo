@@ -11,7 +11,10 @@
 
 @interface GameResultsViewController ()
 
+typedef enum {BY_DATE, BY_DURATION, BY_SCORE} SORT_TYPE_T;
+
 @property (weak, nonatomic) IBOutlet UITextView *display;
+@property (nonatomic) SORT_TYPE_T sortType;
 
 @end
 
