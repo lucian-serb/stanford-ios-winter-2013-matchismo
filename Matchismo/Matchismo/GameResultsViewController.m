@@ -58,8 +58,21 @@ typedef enum {BY_DATE, BY_DURATION, BY_SCORE, ENUM_NR_ITEMS} SORT_TYPE_T;
 - (void)updateUI
 {
     NSString *displayText = @"";
+    NSArray *allGameResults;
+    
+    switch (self.sortType) {
+        case BY_SCORE:
+            allGameResults = [GameResults allGamesResultsSortedByScore];
+            break;
+        case BY_DURATION:
+            allGameResults = [GameResults allGamesResultsSortedByDuration];
+            break;
+        default:
+            allGameResults = [GameResults allGamesResultsSortedByDate];
+            break;
+    }
 
-    for (GameResults *gameResults in [GameResults allGamesResults]) {
+    for (GameResults *gameResults in allGameResults) {
         displayText = [displayText stringByAppendingFormat:@"Score %d (%@, %0f)\n", gameResults.score, gameResults.start, gameResults.duration];
     }
     
@@ -78,7 +91,7 @@ typedef enum {BY_DATE, BY_DURATION, BY_SCORE, ENUM_NR_ITEMS} SORT_TYPE_T;
 - (IBAction)sortByDate
 {
     self.sortType = BY_DATE;
-}
+}s
 
 - (IBAction)sortByDuration
 {
