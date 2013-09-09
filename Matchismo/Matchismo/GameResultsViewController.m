@@ -66,6 +66,15 @@ typedef enum {BY_DATE, BY_DURATION, BY_SCORE} SORT_TYPE_T;
     self.display.text = displayText;
 }
 
+- (void)setSortType:(SORT_TYPE_T)sortType
+{
+    if ((sortType >= BY_DATE) && (sortType <= BY_SCORE)) {
+        _sortType = sortType;
+    } else {
+        _sortType = BY_DATE;
+    }
+}
+
 - (IBAction)sortByDate
 {
     
