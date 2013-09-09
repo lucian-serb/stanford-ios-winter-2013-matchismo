@@ -54,6 +54,33 @@
     return allResults;
 }
 
+- (NSComparisonResult)compareDate:(GameResults *)gameResults
+{
+    return [self.start compare:gameResults.start];
+}
+
+- (NSComparisonResult)compareDuration:(GameResults *)gameResults
+{
+    if (self.duration < gameResults.duration) {
+        return NSOrderedAscending;
+    } else if (self.duration > gameResults.duration) {
+        return NSOrderedDescending;
+    }
+    
+    return NSOrderedSame;
+}
+
+- (NSComparisonResult)compareScore:(GameResults *)gameResults
+{
+    if (self.score < gameResults.score) {
+        return NSOrderedAscending;
+    } else if (self.score > gameResults.score) {
+        return NSOrderedDescending;
+    }
+    
+    return NSOrderedSame;
+}
+
 + (NSArray *)allGamesResultsSortedByDate
 {
     NSMutableArray *allResults;
