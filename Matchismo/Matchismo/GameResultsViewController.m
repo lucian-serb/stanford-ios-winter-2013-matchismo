@@ -73,7 +73,7 @@ typedef enum {BY_DATE, BY_DURATION, BY_SCORE, ENUM_NR_ITEMS} SORT_TYPE_T;
     }
 
     for (GameResults *gameResults in allGameResults) {
-        displayText = [displayText stringByAppendingFormat:@"Score %d (%@, %0f)\n", gameResults.score, gameResults.start, gameResults.duration];
+        displayText = [displayText stringByAppendingFormat:@"Score %d (%@, %.2f)\n", gameResults.score, gameResults.start, gameResults.duration];
     }
     
     self.display.text = displayText;
