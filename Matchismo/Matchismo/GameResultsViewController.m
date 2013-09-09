@@ -11,7 +11,7 @@
 
 @interface GameResultsViewController ()
 
-typedef enum {BY_DATE, BY_DURATION, BY_SCORE} SORT_TYPE_T;
+typedef enum {BY_DATE, BY_DURATION, BY_SCORE, ENUM_NR_ITEMS} SORT_TYPE_T;
 
 @property (weak, nonatomic) IBOutlet UITextView *display;
 @property (nonatomic) SORT_TYPE_T sortType;
@@ -68,7 +68,7 @@ typedef enum {BY_DATE, BY_DURATION, BY_SCORE} SORT_TYPE_T;
 
 - (void)setSortType:(SORT_TYPE_T)sortType
 {
-    if ((sortType >= BY_DATE) && (sortType <= BY_SCORE)) {
+    if (sortType < ENUM_NR_ITEMS) {
         _sortType = sortType;
     } else {
         _sortType = BY_DATE;
