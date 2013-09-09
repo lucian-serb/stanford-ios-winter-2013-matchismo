@@ -91,16 +91,19 @@ typedef enum {BY_DATE, BY_DURATION, BY_SCORE, ENUM_NR_ITEMS} SORT_TYPE_T;
 - (IBAction)sortByDate
 {
     self.sortType = BY_DATE;
+    [self updateUI];
 }
 
 - (IBAction)sortByDuration
 {
     self.sortType = BY_DURATION;
+    [self updateUI];
 }
 
 - (IBAction)sortByScore
 {
     self.sortType = BY_SCORE;
+    [self updateUI];
 }
 
 @end
