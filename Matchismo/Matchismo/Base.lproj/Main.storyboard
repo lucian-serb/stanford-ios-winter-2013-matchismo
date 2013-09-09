@@ -345,6 +345,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sortByDate" destination="23P-tY-FRb" eventType="touchUpInside" id="1hx-Hp-P2O"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Krf-a5-Xhe">
                                 <rect key="frame" x="218" y="368" width="73" height="44"/>
@@ -358,6 +361,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sortByScore" destination="23P-tY-FRb" eventType="touchUpInside" id="htx-Oy-xEK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jYP-3z-r5U">
                                 <rect key="frame" x="110" y="368" width="100" height="44"/>
@@ -371,6 +377,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sortByDuration" destination="23P-tY-FRb" eventType="touchUpInside" id="20J-Yp-id7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

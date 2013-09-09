@@ -63,4 +63,19 @@
     self.display.text = displayText;
 }
 
+- (IBAction)sortByDate
+{
+    
+}
+
+- (IBAction)sortByDuration
+{
+    
+}
+
+- (IBAction)sortByScore
+{
+    
+}
+
 @end
