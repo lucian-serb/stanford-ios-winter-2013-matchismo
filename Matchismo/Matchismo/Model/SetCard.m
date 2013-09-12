@@ -17,7 +17,13 @@
 
 + (NSArray *)validColors
 {
-    return nil;
+    static NSArray *validColors;
+    
+    if (!validColors) {
+        validColors = @[];
+    }
+    
+    return validColors;
 }
 
 + (NSArray *)validShading
@@ -27,7 +33,13 @@
 
 + (NSArray *)validSymbols
 {
-    return nil;
+    static NSArray *validSymbols;
+    
+    if (!validSymbols) {
+        validSymbols = @[@"◯", @"▢", @"△"];
+    }
+    
+    return validSymbols;
 }
 
 @end
