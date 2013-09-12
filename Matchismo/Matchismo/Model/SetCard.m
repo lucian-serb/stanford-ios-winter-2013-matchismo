@@ -62,4 +62,11 @@
     }
 }
 
+- (void)setShading:(SHADING_T)shading
+{
+    if (shading < SHADING_SIZE) {
+        _shading = shading;
+    }
+}
+
 @end
