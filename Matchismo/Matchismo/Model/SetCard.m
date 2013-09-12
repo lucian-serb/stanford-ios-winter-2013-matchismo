@@ -10,4 +10,24 @@
 
 @implementation SetCard
 
++ (NSUInteger)maxSymbols
+{
+    return 0;
+}
+
++ (NSArray *)validColors
+{
+    return nil;
+}
+
++ (NSArray *)validShading
+{
+    return nil;
+}
+
++ (NSArray *)validSymbols
+{
+    return nil;
+}
+
 @end

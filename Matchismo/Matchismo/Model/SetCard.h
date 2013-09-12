@@ -18,4 +18,9 @@ typedef enum {SOLID, STRIPED, OPEN} SHADING_T;
 @property (nonatomic) SHADING_T shading;
 @property (strong, nonatomic) NSString *symbol;
 
++ (NSUInteger)maxSymbols;
++ (NSArray *)validColors;
++ (NSArray *)validShading;
++ (NSArray *)validSymbols;
+
 @end
