@@ -352,17 +352,6 @@
                                     <action selector="deal:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YJJ-wZ-Dd8"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="MPU-uw-7wS">
-                                <rect key="frame" x="20" y="367" width="280" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="2-card-match-mode"/>
-                                    <segment title="3-card-match-mode"/>
-                                </segments>
-                                <connections>
-                                    <action selector="changeGameMode:" destination="vXZ-lx-hvc" eventType="valueChanged" id="gjC-bQ-a4m"/>
-                                </connections>
-                            </segmentedControl>
                             <slider opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" id="hVd-fU-lC6">
                                 <rect key="frame" x="18" y="417" width="284" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -378,7 +367,6 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="flipsLabel" destination="iZP-Qd-Jat" id="bvz-Yf-XcQ"/>
-                        <outlet property="gameModeSelector" destination="MPU-uw-7wS" id="jOH-29-EEo"/>
                         <outlet property="historySlider" destination="hVd-fU-lC6" id="sdT-aH-zYH"/>
                         <outlet property="resultLabel" destination="80t-re-PW6" id="vhS-P9-4xU"/>
                         <outlet property="scoreLabel" destination="78o-1a-t0I" id="l5L-m7-PAh"/>
