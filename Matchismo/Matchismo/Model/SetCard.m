@@ -48,4 +48,11 @@
     return validSymbols;
 }
 
+- (void)setNrSymbols:(NSUInteger)nrSymbols
+{
+    if ((nrSymbols > 0) && (nrSymbols <= [SetCard maxSymbols])) {
+        _nrSymbols = nrSymbols;
+    }
+}
+
 @end
