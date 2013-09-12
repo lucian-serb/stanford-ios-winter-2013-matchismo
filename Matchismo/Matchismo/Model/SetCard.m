@@ -20,7 +20,7 @@
     static NSArray *validColors;
     
     if (!validColors) {
-        validColors = @[];
+        validColors = @[@(GREEN), @(RED), @(PURPLE)];
     }
     
     return validColors;
