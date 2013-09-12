@@ -55,4 +55,11 @@
     }
 }
 
+- (void)setColor:(COLOR_T)color
+{
+    if (color < COLOR_SIZE) {
+        _color = color;
+    }
+}
+
 @end
