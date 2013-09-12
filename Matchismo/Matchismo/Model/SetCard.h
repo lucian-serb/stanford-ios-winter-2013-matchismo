@@ -10,8 +10,8 @@
 
 @interface SetCard : Card
 
-typedef enum {GREEN, RED, PURPLE} COLOR_T;
-typedef enum {SOLID, STRIPED, OPEN} SHADING_T;
+typedef enum {GREEN, RED, PURPLE, COLOR_SIZE} COLOR_T;
+typedef enum {SOLID, STRIPED, OPEN, SHADING_SIZE} SHADING_T;
 
 @property (nonatomic) NSUInteger nrSymbols;
 @property (nonatomic) COLOR_T color;
