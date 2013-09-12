@@ -69,9 +69,18 @@
     }
 }
 
+@synthesize symbol = _symbol;
+
 - (NSString *)symbol
 {
     return _symbol ? _symbol : @"?";
+}
+
+- (void)setSymbol:(NSString *)symbol
+{
+    if ([[SetCard validSymbols] containsObject:symbol]) {
+        _symbol = symbol;
+    }
 }
 
 @end
