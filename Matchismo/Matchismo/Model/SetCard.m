@@ -69,4 +69,9 @@
     }
 }
 
+- (NSString *)symbol
+{
+    return _symbol ? _symbol : @"?";
+}
+
 @end
