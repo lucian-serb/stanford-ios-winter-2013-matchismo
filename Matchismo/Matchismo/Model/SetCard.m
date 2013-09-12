@@ -28,6 +28,12 @@
 
 + (NSArray *)validShading
 {
+    static NSArray *validShading;
+    
+    if (!validShading) {
+        validShading = @[@(SOLID), @(STRIPED), @(OPEN)];
+    }
+    
     return nil;
 }
 
