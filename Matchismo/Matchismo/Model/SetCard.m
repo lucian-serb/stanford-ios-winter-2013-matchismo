@@ -12,7 +12,7 @@
 
 + (NSUInteger)maxSymbols
 {
-    return 0;
+    return [[self validSymbols] count];
 }
 
 + (NSArray *)validColors
