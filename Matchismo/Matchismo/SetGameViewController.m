@@ -45,4 +45,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setCardButtons:(NSArray *)cardButtons
+{
+    _cardButtons = cardButtons;
+    [self updateUI];
+}
+
 @end
