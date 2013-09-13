@@ -94,4 +94,19 @@
     return contents;
 }
 
+- (NSInteger)match:(NSArray *)otherCards
+{
+    if (!compareSymbols:otherCards) {
+        return 0;
+    } else if (!compareShading:otherCards) {
+        return 0;
+    } else if (!compareColor:otherCards) {
+        return 0;
+    } else if (!compareNrSymbols:otherCards) {
+        return 0;
+    }
+
+    return 1;
+}
+
 @end
