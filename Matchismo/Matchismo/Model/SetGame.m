@@ -8,6 +8,12 @@
 
 #import "SetGame.h"
 
+@interface SetGame ()
+
+@property (strong, nonatomic) NSMutableArray *cards;
+
+@end
+
 @implementation SetGame
 
 @end
