@@ -143,6 +143,15 @@
 
 - (BOOL)compareShading:(NSArray *)cards
 {
+    if (![self verifyCardsArray:cards]) {
+        return NO;
+    }
+    
+    if ((((SetCard *)cards[0]).shading == ((SetCard *)cards[1]).shading) &&
+        (((SetCard *)cards[0]).shading == ((SetCard *)cards[2]).shading)) {
+        return YES;
+    }
+    
     return NO;
 }
 
