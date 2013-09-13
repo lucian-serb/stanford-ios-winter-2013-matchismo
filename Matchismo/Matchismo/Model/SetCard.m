@@ -112,6 +112,21 @@
     return 1;
 }
 
+- (BOOL)verifyCardsArray:(NSArray *)cards
+{
+    if ([cards count] != 3) {
+        return NO;
+    }
+    
+    for (id card in cards) {
+        if (![card isKindOfClass:[SetCard class]]) {
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
 - (BOOL)compareSymbols:(NSArray *)cards
 {
     return NO;
