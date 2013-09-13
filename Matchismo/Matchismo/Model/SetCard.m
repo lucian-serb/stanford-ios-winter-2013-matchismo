@@ -157,6 +157,15 @@
 
 - (BOOL)compareColor:(NSArray *)cards
 {
+    if (![self verifyCardsArray:cards]) {
+        return NO;
+    }
+    
+    if ((((SetCard *)cards[0]).color == ((SetCard *)cards[1]).color) &&
+        (((SetCard *)cards[0]).color == ((SetCard *)cards[2]).color)) {
+        return YES;
+    }
+    
     return NO;
 }
 
