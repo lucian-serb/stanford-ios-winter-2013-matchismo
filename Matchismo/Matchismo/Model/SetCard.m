@@ -178,6 +178,10 @@
     if ((((SetCard *)cards[0]).nrSymbols == ((SetCard *)cards[1]).nrSymbols) &&
         (((SetCard *)cards[0]).nrSymbols == ((SetCard *)cards[2]).nrSymbols)) {
         return YES;
+    } else if ((((SetCard *)cards[0]).nrSymbols != ((SetCard *)cards[1]).nrSymbols) &&
+        (((SetCard *)cards[0]).nrSymbols != ((SetCard *)cards[2]).nrSymbols) &&
+        (((SetCard *)cards[1]).nrSymbols == ((SetCard *)cards[2]).nrSymbols)) {
+        return YES;
     }
     
     return NO;
