@@ -136,6 +136,10 @@
     if (([((SetCard *)cards[0]).symbol isEqualToString:((SetCard *)cards[1]).symbol]) &&
         ([((SetCard *)cards[0]).symbol isEqualToString:((SetCard *)cards[2]).symbol])) {
         return YES;
+    } else if ((![((SetCard *)cards[0]).symbol isEqualToString:((SetCard *)cards[1]).symbol]) &&
+               (![((SetCard *)cards[0]).symbol isEqualToString:((SetCard *)cards[2]).symbol]) &&
+               (![((SetCard *)cards[1]).symbol isEqualToString:((SetCard *)cards[2]).symbol])) {
+        return YES;
     }
     
     return NO;
