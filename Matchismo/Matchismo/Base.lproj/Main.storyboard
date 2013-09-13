@@ -805,6 +805,32 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Set" id="Ags-sm-8CW"/>
+                    <connections>
+                        <outletCollection property="cardButtons" destination="Hni-DD-lvV" id="2re-wE-hUJ"/>
+                        <outletCollection property="cardButtons" destination="gf3-ps-3xk" id="UFy-Fz-bQp"/>
+                        <outletCollection property="cardButtons" destination="2ax-zb-eZj" id="zo6-8q-OCl"/>
+                        <outletCollection property="cardButtons" destination="vZm-MX-b3I" id="j68-FC-WAD"/>
+                        <outletCollection property="cardButtons" destination="vmg-hl-679" id="o1G-nQ-4By"/>
+                        <outletCollection property="cardButtons" destination="mLU-fq-WJn" id="P2p-o4-Qzz"/>
+                        <outletCollection property="cardButtons" destination="Nx4-9n-drv" id="xLi-hv-Rzb"/>
+                        <outletCollection property="cardButtons" destination="Dj9-FI-qkT" id="OuH-wb-kxd"/>
+                        <outletCollection property="cardButtons" destination="Nhw-oF-6YD" id="YyL-o5-1q4"/>
+                        <outletCollection property="cardButtons" destination="UAh-1G-D13" id="pZ7-xY-9BN"/>
+                        <outletCollection property="cardButtons" destination="HqQ-yn-0JN" id="GWm-XK-IBo"/>
+                        <outletCollection property="cardButtons" destination="M8W-5a-H36" id="9gf-Ck-29B"/>
+                        <outletCollection property="cardButtons" destination="f89-TP-GbS" id="RcG-Wu-Csx"/>
+                        <outletCollection property="cardButtons" destination="WpK-HO-3oL" id="WU3-N1-dcS"/>
+                        <outletCollection property="cardButtons" destination="d3y-zT-HMc" id="2YR-Hm-BDV"/>
+                        <outletCollection property="cardButtons" destination="A4f-Dp-7vl" id="o5C-P8-0vA"/>
+                        <outletCollection property="cardButtons" destination="kX5-ry-rv0" id="B9s-eu-mby"/>
+                        <outletCollection property="cardButtons" destination="rEg-0l-hOe" id="r29-nl-bif"/>
+                        <outletCollection property="cardButtons" destination="NQE-vG-WeS" id="xk1-XX-Fqr"/>
+                        <outletCollection property="cardButtons" destination="Ime-ht-kxt" id="ygb-eM-cXy"/>
+                        <outletCollection property="cardButtons" destination="deh-ju-PKO" id="p0o-xU-GLc"/>
+                        <outletCollection property="cardButtons" destination="Pcq-tg-vLk" id="0p3-t3-Mez"/>
+                        <outletCollection property="cardButtons" destination="QeA-yO-VvY" id="aqU-ZA-1BV"/>
+                        <outletCollection property="cardButtons" destination="k6U-Ic-TEB" id="Gno-SF-aIj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="94w-Oj-7D6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -852,6 +878,9 @@
         </class>
         <class className="SetGameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SetGameViewController.h"/>
+            <relationships>
+                <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
