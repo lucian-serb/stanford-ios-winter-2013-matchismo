@@ -34,7 +34,7 @@
         validShading = @[@(SOLID), @(STRIPED), @(OPEN)];
     }
     
-    return nil;
+    return validShading;
 }
 
 + (NSArray *)validSymbols
