@@ -96,17 +96,37 @@
 
 - (NSInteger)match:(NSArray *)otherCards
 {
-    if (!compareSymbols:otherCards) {
+    if (![self compareSymbols:otherCards]) {
         return 0;
-    } else if (!compareShading:otherCards) {
+    } else if (![self compareShading:otherCards]) {
         return 0;
-    } else if (!compareColor:otherCards) {
+    } else if (![self compareColor:otherCards]) {
         return 0;
-    } else if (!compareNrSymbols:otherCards) {
+    } else if (![self compareNrSymbols:otherCards]) {
         return 0;
     }
 
     return 1;
+}
+
+- (BOOL)compareSymbols:(NSArray *)cards
+{
+    return NO;
+}
+
+- (BOOL)compareShading:(NSArray *)cards
+{
+    return NO;
+}
+
+- (BOOL)compareColor:(NSArray *)cards
+{
+    return NO;
+}
+
+- (BOOL)compareNrSymbols:(NSArray *)cards
+{
+    return NO;
 }
 
 @end
