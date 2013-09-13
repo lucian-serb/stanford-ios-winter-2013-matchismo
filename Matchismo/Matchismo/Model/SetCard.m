@@ -96,13 +96,16 @@
 
 - (NSInteger)match:(NSArray *)otherCards
 {
-    if (![self compareSymbols:otherCards]) {
+    NSMutableArray *cards = [otherCards mutableCopy];
+    [cards addObject:self];
+    
+    if (![self compareSymbols:cards]) {
         return 0;
-    } else if (![self compareShading:otherCards]) {
+    } else if (![self compareShading:cards]) {
         return 0;
-    } else if (![self compareColor:otherCards]) {
+    } else if (![self compareColor:cards]) {
         return 0;
-    } else if (![self compareNrSymbols:otherCards]) {
+    } else if (![self compareNrSymbols:cards]) {
         return 0;
     }
 
