@@ -7,6 +7,7 @@
 //
 
 #import "SetGameViewController.h"
+#import "SetCardDeck.h"
 
 @interface SetGameViewController ()
 
@@ -49,6 +50,11 @@
 {
     _cardButtons = cardButtons;
     [self updateUI];
+}
+
+- (void)updateUI
+{
+    
 }
 
 @end
