@@ -129,6 +129,15 @@
 
 - (BOOL)compareSymbols:(NSArray *)cards
 {
+    if (![self verifyCardsArray:cards]) {
+        return NO;
+    }
+    
+    if (([((SetCard *)cards[0]).symbol isEqualToString:((SetCard *)cards[1]).symbol]) &&
+        ([((SetCard *)cards[0]).symbol isEqualToString:((SetCard *)cards[2]).symbol])) {
+        return YES;
+    }
+    
     return NO;
 }
 
