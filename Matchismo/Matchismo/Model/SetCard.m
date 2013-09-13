@@ -150,6 +150,10 @@
     if ((((SetCard *)cards[0]).shading == ((SetCard *)cards[1]).shading) &&
         (((SetCard *)cards[0]).shading == ((SetCard *)cards[2]).shading)) {
         return YES;
+    } else if ((((SetCard *)cards[0]).shading != ((SetCard *)cards[1]).shading) &&
+               (((SetCard *)cards[0]).shading != ((SetCard *)cards[2]).shading) &&
+               (((SetCard *)cards[1]).shading == ((SetCard *)cards[2]).shading)) {
+        return YES;
     }
     
     return NO;
