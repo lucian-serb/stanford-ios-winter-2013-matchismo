@@ -8,10 +8,12 @@
 
 #import "SetGameViewController.h"
 #import "SetCardDeck.h"
+#import "SetGame.h"
 
 @interface SetGameViewController ()
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (strong, nonatomic) SetGame *game;
 
 @end
 
@@ -44,6 +46,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (SetGame *)game
+{
+    if (!_game) {
+        _game = [[SetGame alloc] initWithCardCount:[self.cardButtons count]
+                                        usingDeck:[[SetCardDeck alloc] init]];
+    }
+    
+    return _game;
 }
 
 - (void)setCardButtons:(NSArray *)cardButtons
