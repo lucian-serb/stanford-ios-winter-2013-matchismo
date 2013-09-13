@@ -83,4 +83,15 @@
     }
 }
 
+- (NSString *)contents
+{
+    NSString *contents = @"";
+    
+    for (NSUInteger i = 0; i < self.nrSymbols; i++) {
+        contents = [contents stringByAppendingString:self.symbol];
+    }
+    
+    return contents;
+}
+
 @end
