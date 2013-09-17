@@ -66,7 +66,31 @@
 
 - (void)updateUI
 {
-    
+    for (UIButton *cardButton in self.cardButtons) {
+        SetCard *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
+        NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:card.contents];
+        NSRange range = [card.contents rangeOfString:card.contents];
+        UIColor *color;
+        
+        switch (card.color) {
+            case GREEN:
+                color = [[UIColor alloc] initWithCIColor:[CIColor colorWithRed:0.0 green:1.0 blue:0.0]];
+                break;
+            case PURPLE:
+                color = [[UIColor alloc] initWithCIColor:[CIColor colorWithRed:0.5 green:0.0 blue:0.5]];
+                break;
+            case RED:
+                color = [[UIColor alloc] initWithCIColor:[CIColor colorWithRed:1.0 green:0.0 blue:0.0]];
+                break;
+            default:
+                // not handled
+                break;
+        }
+        
+        NSDictionary *attributes = @{NSForegroundColorAttributeName: color};
+        [attr addAttributes:attributes range:range];
+        [cardButton setAttributedTitle:attr forState:UIControlStateNormal];
+    }
 }
 
 @end
