@@ -49,7 +49,7 @@
     return self;
 }
 
-- (Card *)cardAtIndex:(NSUInteger)index
+- (SetCard *)cardAtIndex:(NSUInteger)index
 {
     return (index < [self.cards count]) ? self.cards[index] : nil;
 }

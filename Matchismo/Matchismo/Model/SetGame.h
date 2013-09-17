@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "Deck.h"
+#import "SetCard.h"
 
 @interface SetGame : NSObject
 
 - (id)initWithCardCount:(NSUInteger)cardCount
               usingDeck:(Deck *)deck;
 
-- (Card *)cardAtIndex:(NSUInteger)index;
+- (SetCard *)cardAtIndex:(NSUInteger)index;
 
 @end
