@@ -93,4 +93,10 @@
     }
 }
 
+- (IBAction)deal
+{
+    self.game = nil;
+    [self updateUI];
+}
+
 @end
