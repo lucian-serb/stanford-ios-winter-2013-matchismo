@@ -74,13 +74,13 @@
         
         switch (card.color) {
             case GREEN:
-                color = [[UIColor alloc] initWithCIColor:[CIColor colorWithRed:0.0 green:1.0 blue:0.0]];
+                color = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:1.0];
                 break;
             case PURPLE:
-                color = [[UIColor alloc] initWithCIColor:[CIColor colorWithRed:0.5 green:0.0 blue:0.5]];
+                color = [UIColor colorWithRed:0.5 green:0.0 blue:0.5 alpha:1.0];
                 break;
             case RED:
-                color = [[UIColor alloc] initWithCIColor:[CIColor colorWithRed:1.0 green:0.0 blue:0.0]];
+                color = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
                 break;
             default:
                 // not handled
