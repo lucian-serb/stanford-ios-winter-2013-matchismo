@@ -87,8 +87,27 @@
                 break;
         }
         
+        NSDictionary *shadingAttributes;
+        
+        switch (card.shading) {
+            case SOLID:
+                shadingAttributes = @{NSStrokeWidthAttributeName: @10.0};
+                break;
+            case OPEN:
+                shadingAttributes = @{NSStrokeWidthAttributeName: @0.0};
+                break;
+            case STRIPED:
+                shadingAttributes = @{NSStrokeColorAttributeName: color,
+                                      NSStrokeWidthAttributeName: @(-10.0)};
+                color = [color colorWithAlphaComponent:0.2];
+            default:
+                // not handled
+                break;
+        }
+        
         NSDictionary *attributes = @{NSForegroundColorAttributeName: color};
         [attr addAttributes:attributes range:range];
+        [attr addAttributes:shadingAttributes range:range];
         [cardButton setAttributedTitle:attr forState:UIControlStateNormal];
     }
 }
