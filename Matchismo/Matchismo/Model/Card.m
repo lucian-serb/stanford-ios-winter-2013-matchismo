@@ -12,7 +12,7 @@
 
 - (NSInteger)match:(NSArray *) otherCards
 {
-    NSInteger score;
+    NSInteger score = 0;
     
     for (Card *card in otherCards) {
         if ([card.contents isEqualToString:self.contents]) {
