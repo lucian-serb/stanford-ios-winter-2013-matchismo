@@ -42,7 +42,7 @@
     static NSArray *validSymbols;
     
     if (!validSymbols) {
-        validSymbols = @[@"◯", @"▢", @"△"];
+        validSymbols = @[@"●", @"■", @"▲"];
     }
     
     return validSymbols;
