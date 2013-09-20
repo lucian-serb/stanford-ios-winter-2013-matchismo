@@ -140,6 +140,10 @@
 {
     self.game = nil;
     self.flipCount = 0;
+    self.resultArray = nil;
+    self.historySlider.maximumValue = 1.0;
+    self.historySlider.value = self.historySlider.maximumValue;
+    self.historySlider.enabled = NO;
     [self updateUI];
 }
 
