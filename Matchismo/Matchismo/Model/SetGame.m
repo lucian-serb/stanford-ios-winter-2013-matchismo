@@ -11,7 +11,9 @@
 @interface SetGame ()
 
 @property (strong, nonatomic) NSMutableArray *cards;
+@property (readwrite, nonatomic) NSInteger score;
 @property (readwrite, nonatomic) NSMutableArray *flippedCards;
+@property (readwrite, nonatomic) NSInteger flipScore;
 @property (readwrite, nonatomic) NSInteger gameStatus;
 
 @end
