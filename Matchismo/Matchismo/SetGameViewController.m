@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property (nonatomic) NSInteger flipCount;
 @property (weak, nonatomic) IBOutlet UISlider *historySlider;
+@property (strong, nonatomic) NSMutableArray *resultArray;
 
 @end
 
@@ -67,6 +68,15 @@
 {
     _cardButtons = cardButtons;
     [self updateUI];
+}
+
+- (NSMutableArray *)resultArray
+{
+    if (!_resultArray) {
+        _resultArray = [[NSMutableArray alloc] init];
+    }
+    
+    return _resultArray;
 }
 
 - (void)updateUI
