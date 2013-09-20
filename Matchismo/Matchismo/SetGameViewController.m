@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
+@property (nonatomic) NSInteger flipCount;
 
 @end
 
@@ -113,6 +114,12 @@
         [attr addAttributes:shadingAttributes range:range];
         [cardButton setAttributedTitle:attr forState:UIControlStateNormal];
     }
+}
+
+- (void)setFlipCount:(NSInteger)flipCount
+{
+    _flipCount = flipCount;
+    self.flipsLabel.text = [NSString stringWithFormat:@"Flips: %d", self.flipCount];
 }
 
 - (IBAction)deal
