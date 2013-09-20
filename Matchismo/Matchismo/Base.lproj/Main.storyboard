@@ -810,6 +810,7 @@
                     <tabBarItem key="tabBarItem" title="Set" id="Ags-sm-8CW"/>
                     <connections>
                         <outlet property="flipsLabel" destination="vVM-Oz-KMH" id="Riw-MS-Yrt"/>
+                        <outlet property="historySlider" destination="FY2-aP-nI9" id="uQa-IU-9A5"/>
                         <outlet property="resultLabel" destination="pV1-Kh-4QD" id="kK1-k5-RmG"/>
                         <outlet property="scoreLabel" destination="hfx-29-yyB" id="5j6-DI-Cj8"/>
                         <outletCollection property="cardButtons" destination="Hni-DD-lvV" id="2re-wE-hUJ"/>

@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property (nonatomic) NSInteger flipCount;
+@property (weak, nonatomic) IBOutlet UISlider *historySlider;
 
 @end
 
