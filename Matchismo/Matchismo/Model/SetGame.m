@@ -78,4 +78,57 @@
     return (index < [self.cards count]) ? self.cards[index] : nil;
 }
 
+#define MISMATCH_PENALTY -2
+#define MATCH_BONUS 4
+#define MATCHING_CARDS 3
+
+- (void)flipCardAtIndex:(NSUInteger)index
+{
+    Card *card = [self cardAtIndex:index];
+    
+    if (!card.isUnplayable) {
+        if (!card.isFaceUp) {
+            [self.flippedCards removeAllObjects];
+            self.flipScore = 0;
+            self.gameStatus = 0;
+            
+            for (Card *otherCard in self.cards) {
+                if (!otherCard.isUnplayable && otherCard.isFaceUp) {
+                    [self.flippedCards addObject:otherCard];
+                    
+                    if ([self.flippedCards count] == MATCHING_CARDS - 1) {
+                        break;
+                    }
+                }
+            }
+            
+            if ([self.flippedCards count] == MATCHING_CARDS - 1) {
+                NSInteger matchScore = [card match:self.flippedCards];
+                
+                if (matchScore) {
+                    for (Card *otherCard in self.flippedCards) {
+                        otherCard.unplayable = YES;
+                    }
+                    
+                    card.unplayable = YES;
+                    self.flipScore = matchScore * MATCH_BONUS;
+                    self.gameStatus = 1;
+                } else {
+                    for (Card *otherCard in self.flippedCards) {
+                        otherCard.faceUp = NO;
+                    }
+                    
+                    self.flipScore = MISMATCH_PENALTY;
+                    self.gameStatus = -1;
+                }
+            }
+            
+            [self.flippedCards addObject:card];
+            self.score += self.flipScore;
+        }
+        
+        card.faceUp = !card.isFaceUp;
+    }
+}
+
 @end
