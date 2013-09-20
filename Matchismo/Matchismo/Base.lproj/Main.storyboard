@@ -790,21 +790,6 @@
     </scenes>
     <resources>
         <image name="cardback.jpg" width="64" height="81"/>
-        <image name="cardback.jpg" width="64" height="81"/>
-        <image name="cardback.jpg" width="64" height="81"/>
-        <image name="cardback.jpg" width="64" height="81"/>
-        <image name="cardback.jpg" width="64" height="81"/>
-        <image name="cardback.jpg" width="64" height="81"/>
-        <image name="cardback.jpg" width="64" height="81"/>
-        <image name="cardback.jpg" width="64" height="81"/>
-        <image name="cardback.jpg" width="64" height="81"/>
-        <image name="cardback.jpg" width="64" height="81"/>
-        <image name="cardback.jpg" width="64" height="81"/>
-        <image name="cardback.jpg" width="64" height="81"/>
-        <image name="cardback.jpg" width="64" height="81"/>
-        <image name="cardback.jpg" width="64" height="81"/>
-        <image name="cardback.jpg" width="64" height="81"/>
-        <image name="cardback.jpg" width="64" height="81"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
