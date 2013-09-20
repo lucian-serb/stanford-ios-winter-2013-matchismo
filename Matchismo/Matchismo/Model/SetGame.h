@@ -17,4 +17,9 @@
 - (SetCard *)cardAtIndex:(NSUInteger)index;
 - (void)flipCardAtIndex:(NSUInteger)index;
 
+@property (readonly, nonatomic) NSInteger score;
+@property (readonly, nonatomic) NSMutableArray *flippedCards;
+@property (readonly, nonatomic) NSInteger flipScore;
+@property (readonly, nonatomic) NSInteger gameStatus;
+
 @end
