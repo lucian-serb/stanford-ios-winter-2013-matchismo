@@ -113,6 +113,9 @@
         [attr addAttributes:attributes range:range];
         [attr addAttributes:shadingAttributes range:range];
         [cardButton setAttributedTitle:attr forState:UIControlStateNormal];
+        cardButton.selected = card.isFaceUp;
+        cardButton.enabled = !card.isUnplayable;
+        cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
     }
 }
 
