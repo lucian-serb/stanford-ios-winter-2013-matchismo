@@ -11,6 +11,7 @@
 @interface SetGame ()
 
 @property (strong, nonatomic) NSMutableArray *cards;
+@property (readwrite, nonatomic) NSMutableArray *flippedCards;
 
 @end
 
@@ -23,6 +24,15 @@
     }
     
     return _cards;
+}
+
+- (NSArray *)flippedCards
+{
+    if (!_flippedCards) {
+        _flippedCards = [[NSMutableArray alloc] init];
+    }
+    
+    return _flippedCards;
 }
 
 - (id)init
