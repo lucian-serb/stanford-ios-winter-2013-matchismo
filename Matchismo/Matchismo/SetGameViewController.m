@@ -140,4 +140,9 @@
     [self updateUI];
 }
 
+- (IBAction)moveThroughHistory:(UISlider *)sender
+{
+    
+}
+
 @end
