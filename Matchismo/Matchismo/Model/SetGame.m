@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSMutableArray *cards;
 @property (readwrite, nonatomic) NSMutableArray *flippedCards;
+@property (readwrite, nonatomic) NSInteger gameStatus;
 
 @end
 
@@ -33,6 +34,17 @@
     }
     
     return _flippedCards;
+}
+
+- (void)setGameStatus:(NSInteger)gameStatus
+{
+    if (gameStatus < 0) {
+        _gameStatus = -1;
+    } else if (gameStatus > 0) {
+        _gameStatus = 1;
+    } else {
+        _gameStatus = 0;
+    }
 }
 
 - (id)init
