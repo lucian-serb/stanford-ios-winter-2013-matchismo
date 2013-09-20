@@ -14,7 +14,7 @@
 
 - (id)initWithCardCount:(NSUInteger)cardCount
               usingDeck:(Deck *)deck;
-
 - (SetCard *)cardAtIndex:(NSUInteger)index;
+- (void)flipCardAtIndex:(NSUInteger)index;
 
 @end
