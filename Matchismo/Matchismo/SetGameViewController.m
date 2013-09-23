@@ -125,6 +125,11 @@
     return [attr copy];
 }
 
+- (NSAttributedString *)attributedStringFromString:(NSString *)string
+{
+    return [[NSAttributedString alloc] initWithString:string];
+}
+
 - (void)updateUI
 {
     for (UIButton *cardButton in self.cardButtons) {
