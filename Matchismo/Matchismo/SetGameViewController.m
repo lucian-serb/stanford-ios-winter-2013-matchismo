@@ -79,51 +79,57 @@
     return _resultArray;
 }
 
+- (NSAttributedString *)asAttributedString:(SetCard *)card
+{
+    NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:card.contents];
+    NSRange range = [card.contents rangeOfString:card.contents];
+    UIColor *color;
+    
+    switch (card.color) {
+        case GREEN:
+            color = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:1.0];
+            break;
+        case PURPLE:
+            color = [UIColor colorWithRed:0.5 green:0.0 blue:0.5 alpha:1.0];
+            break;
+        case RED:
+            color = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
+            break;
+        default:
+            color = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
+            break;
+    }
+    
+    NSDictionary *shadingAttributes;
+    
+    switch (card.shading) {
+        case SOLID:
+            shadingAttributes = @{NSStrokeWidthAttributeName: @10.0};
+            break;
+        case OPEN:
+            shadingAttributes = @{NSStrokeWidthAttributeName: @0.0};
+            break;
+        case STRIPED:
+            shadingAttributes = @{NSStrokeColorAttributeName: color,
+                                  NSStrokeWidthAttributeName: @(-10.0)};
+            color = [color colorWithAlphaComponent:0.2];
+        default:
+            // not handled
+            break;
+    }
+    
+    NSDictionary *attributes = @{NSForegroundColorAttributeName: color};
+    [attr addAttributes:attributes range:range];
+    [attr addAttributes:shadingAttributes range:range];
+    
+    return [attr copy];
+}
+
 - (void)updateUI
 {
     for (UIButton *cardButton in self.cardButtons) {
         SetCard *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
-        NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:card.contents];
-        NSRange range = [card.contents rangeOfString:card.contents];
-        UIColor *color;
-        
-        switch (card.color) {
-            case GREEN:
-                color = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:1.0];
-                break;
-            case PURPLE:
-                color = [UIColor colorWithRed:0.5 green:0.0 blue:0.5 alpha:1.0];
-                break;
-            case RED:
-                color = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
-                break;
-            default:
-                color = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
-                break;
-        }
-        
-        NSDictionary *shadingAttributes;
-        
-        switch (card.shading) {
-            case SOLID:
-                shadingAttributes = @{NSStrokeWidthAttributeName: @10.0};
-                break;
-            case OPEN:
-                shadingAttributes = @{NSStrokeWidthAttributeName: @0.0};
-                break;
-            case STRIPED:
-                shadingAttributes = @{NSStrokeColorAttributeName: color,
-                                      NSStrokeWidthAttributeName: @(-10.0)};
-                color = [color colorWithAlphaComponent:0.2];
-            default:
-                // not handled
-                break;
-        }
-        
-        NSDictionary *attributes = @{NSForegroundColorAttributeName: color};
-        [attr addAttributes:attributes range:range];
-        [attr addAttributes:shadingAttributes range:range];
-        [cardButton setAttributedTitle:attr forState:UIControlStateNormal];
+        [cardButton setAttributedTitle:[self asAttributedString:card] forState:UIControlStateNormal];
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
         cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
