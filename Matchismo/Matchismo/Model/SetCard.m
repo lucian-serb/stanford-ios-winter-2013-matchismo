@@ -156,7 +156,7 @@
         return YES;
     } else if ((((SetCard *)cards[0]).shading != ((SetCard *)cards[1]).shading) &&
                (((SetCard *)cards[0]).shading != ((SetCard *)cards[2]).shading) &&
-               (((SetCard *)cards[1]).shading == ((SetCard *)cards[2]).shading)) {
+               (((SetCard *)cards[1]).shading != ((SetCard *)cards[2]).shading)) {
         return YES;
     }
     
@@ -174,7 +174,7 @@
         return YES;
     } else if ((((SetCard *)cards[0]).color != ((SetCard *)cards[1]).color) &&
                (((SetCard *)cards[0]).color != ((SetCard *)cards[2]).color) &&
-               (((SetCard *)cards[1]).color == ((SetCard *)cards[2]).color)) {
+               (((SetCard *)cards[1]).color != ((SetCard *)cards[2]).color)) {
         return YES;
     }
     
@@ -192,7 +192,7 @@
         return YES;
     } else if ((((SetCard *)cards[0]).nrSymbols != ((SetCard *)cards[1]).nrSymbols) &&
                (((SetCard *)cards[0]).nrSymbols != ((SetCard *)cards[2]).nrSymbols) &&
-               (((SetCard *)cards[1]).nrSymbols == ((SetCard *)cards[2]).nrSymbols)) {
+               (((SetCard *)cards[1]).nrSymbols != ((SetCard *)cards[2]).nrSymbols)) {
         return YES;
     }
     
