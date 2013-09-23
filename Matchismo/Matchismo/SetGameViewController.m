@@ -141,32 +141,41 @@
     }
     
     if ([self.game.flippedCards count] > 0) {
-        NSString *text = @"";
+        NSMutableAttributedString *labelText = [[self attributedStringFromString:@""] mutableCopy];
         
         if (self.game.gameStatus == 0) {
-            Card *card = [self.game.flippedCards lastObject];
-            text = [NSString stringWithFormat:@"Flipped up %@.", card.contents];
+            SetCard *card = [self.game.flippedCards lastObject];
+            [labelText appendAttributedString:[self attributedStringFromString:@"Flipped up "]];
+            [labelText appendAttributedString:[self asAttributedString:card]];
+            [labelText appendAttributedString:[self attributedStringFromString:@"."]];
         } else {
+            NSMutableAttributedString *text = [[self attributedStringFromString:@""] mutableCopy];
+            
             if ([self.game.flippedCards count] > 2) {
                 for (NSUInteger i = 0; i < [self.game.flippedCards count] - 1; i++) {
-                    Card *card = self.game.flippedCards[i];
-                    text = [text stringByAppendingString:card.contents];
-                    text = [text stringByAppendingString:@", "];
+                    SetCard *card = self.game.flippedCards[i];
+                    [text appendAttributedString:[self asAttributedString:card]];
+                    [text appendAttributedString:[self attributedStringFromString:@", "]];
                 }
             } else {
-                Card *card = [self.game.flippedCards firstObject];
-                text = [text stringByAppendingString:card.contents];
-                text = [text stringByAppendingString:@" "];
+                SetCard *card = [self.game.flippedCards firstObject];
+                [text appendAttributedString:[self asAttributedString:card]];
+                [text appendAttributedString:[self attributedStringFromString:@" "]];
             }
             
-            Card *card = [self.game.flippedCards lastObject];
-            text = [text stringByAppendingString:@"and "];
-            text = [text stringByAppendingString:card.contents];
+            SetCard *card = [self.game.flippedCards lastObject];
+            [text appendAttributedString:[self attributedStringFromString:@"and "]];
+            [text appendAttributedString:[self asAttributedString:card]];
             
             if (self.game.gameStatus == 1) {
-                text = [NSString stringWithFormat:@"Matched %@ for %d points.", text, self.game.flipScore];
+                labelText = [[self attributedStringFromString:@"Matched "] mutableCopy];
+                [labelText appendAttributedString: text];
+                NSString *str = [NSString stringWithFormat:@" for %d points.", self.game.flipScore];
+                [labelText appendAttributedString:[self attributedStringFromString:str]];
             } else if (self.game.gameStatus == -1) {
-                text = [NSString stringWithFormat:@"%@ don't match! %d penalty!", text, self.game.flipScore];
+                labelText = text;
+                NSString *str = [NSString stringWithFormat:@" don't match! %d penalty!", self.game.flipScore];
+                [labelText appendAttributedString:[self attributedStringFromString:str]];
             }
         }
         
@@ -174,16 +183,16 @@
         Card *card = [self.game.flippedCards lastObject];
         
         if (card.isFaceUp) {
-            [self.resultArray addObject:text];
+            [self.resultArray addObject:labelText];
             self.historySlider.maximumValue = [self.resultArray count] - 1;
         }
         
         self.historySlider.value = self.historySlider.maximumValue;
-        self.resultLabel.text = text;
+        self.resultLabel.attributedText = labelText;
     } else {
-        NSString *text = @"Start by flipping a card.";
-        self.resultLabel.text = text;
-        [self.resultArray addObject:text];
+        NSAttributedString *labelText = [self attributedStringFromString:@"Start by flipping a card."];
+        self.resultLabel.attributedText = labelText;
+        [self.resultArray addObject:labelText];
     }
     
     self.resultLabel.alpha = 1.0;
@@ -222,7 +231,7 @@
         self.resultLabel.alpha = 1.0;
     }
     
-    self.resultLabel.text = self.resultArray[(int)round(sender.value)];
+    self.resultLabel.attributedText = self.resultArray[(int)round(sender.value)];
 }
 
 @end
