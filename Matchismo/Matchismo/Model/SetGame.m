@@ -80,7 +80,6 @@
 
 #define MISMATCH_PENALTY -2
 #define MATCH_BONUS 4
-#define MATCHING_CARDS 3
 
 - (void)flipCardAtIndex:(NSUInteger)index
 {

@@ -10,6 +10,8 @@
 
 @interface SetCard : Card
 
+#define MATCHING_CARDS 3
+
 typedef enum {GREEN, RED, PURPLE, COLOR_SIZE} COLOR_T;
 typedef enum {SOLID, STRIPED, OPEN, SHADING_SIZE} SHADING_T;
 

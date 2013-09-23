@@ -114,7 +114,7 @@
 
 - (BOOL)verifyCardsArray:(NSArray *)cards
 {
-    if ([cards count] != 3) {
+    if ([cards count] != MATCHING_CARDS) {
         return NO;
     }
     
