@@ -304,7 +304,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Match" id="gKE-vs-oQ1"/>
+                    <tabBarItem key="tabBarItem" title="Match" image="tab1.png" id="gKE-vs-oQ1"/>
                     <connections>
                         <outlet property="flipsLabel" destination="iZP-Qd-Jat" id="bvz-Yf-XcQ"/>
                         <outlet property="historySlider" destination="hVd-fU-lC6" id="sdT-aH-zYH"/>
@@ -883,6 +883,7 @@
     </scenes>
     <resources>
         <image name="cardback.jpg" width="64" height="81"/>
+        <image name="tab1.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
