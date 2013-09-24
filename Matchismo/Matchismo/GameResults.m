@@ -34,4 +34,12 @@
 {
     return [self.stop timeIntervalSinceDate:self.start];
 }
+
+- (void)setScore:(NSInteger)score
+{
+    _score = score;
+    self.stop = [NSDate date];
+    [self synchronize];
+}
+
 @end
