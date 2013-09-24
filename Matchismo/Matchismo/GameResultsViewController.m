@@ -10,6 +10,8 @@
 
 @interface GameResultsViewController ()
 
+typedef enum {BY_DATE, BY_DURATION, BY_SCORE, ENUM_NR_ITEMS} SORT_TYPE_T;
+@property (weak, nonatomic) IBOutlet UITextView *display;
 @end
 
 @implementation GameResultsViewController
@@ -43,4 +45,31 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)updateUI
+{
+    NSString *displayText = @"";
+    NSArray *allGameResults;
+    
+    switch (self.sortType) {
+        case BY_SCORE:
+            allGameResults = [GameResults allGamesResultsSortedByScore];
+            break;
+        case BY_DURATION:
+            allGameResults = [GameResults allGamesResultsSortedByDuration];
+            break;
+        default:
+            allGameResults = [GameResults allGamesResultsSortedByDate];
+            break;
+    }
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    
+    for (GameResults *gameResults in allGameResults) {
+        displayText = [displayText stringByAppendingFormat:@"Score: %d (%@, %.0fs)\n", gameResults.score, [dateFormatter stringFromDate:gameResults.start], gameResults.duration];
+    }
+    
+    self.display.text = displayText;
+}
 @end
