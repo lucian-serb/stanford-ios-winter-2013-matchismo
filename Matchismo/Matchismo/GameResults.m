@@ -17,4 +17,16 @@
 
 @implementation GameResults
 
+
+- (id)init
+{
+    self = [super init];
+    
+    if (self) {
+        _start = [NSDate date];
+        _stop = _start;
+    }
+    
+    return self;
+}
 @end
