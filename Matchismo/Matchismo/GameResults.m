@@ -42,6 +42,17 @@
     return @{START_KEY: self.start, STOP_KEY: self.stop, SCORE_KEY: @(self.score)};
 }
 
++ (NSArray *)allGamesResults
+{
+    NSMutableArray *allResults = [[NSMutableArray alloc] init];
+    
+    for (id plist in [[[NSUserDefaults standardUserDefaults] dictionaryForKey:ALL_RESULTS_KEY] allValues]) {
+        GameResults *results = [[GameResults alloc] initFromPropertyList:plist];
+        [allResults addObject:results];
+    }
+    
+    return allResults;
+}
 - (id)initFromPropertyList:(id)plist
 {
     self = [self init];
