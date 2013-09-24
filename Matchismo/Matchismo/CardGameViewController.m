@@ -161,6 +161,11 @@
     
     self.flipCount++;
     [self updateUI];
+    Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:sender]];
+    
+    if (card.isFaceUp) {
+        self.gameResults.score = self.game.score;
+    }
 }
 
 - (IBAction)deal:(id)sender
