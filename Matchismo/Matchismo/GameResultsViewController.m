@@ -7,6 +7,7 @@
 //
 
 #import "GameResultsViewController.h"
+#import "GameResults.h"
 
 @interface GameResultsViewController ()
 
@@ -43,6 +44,12 @@ typedef enum {BY_DATE, BY_DURATION, BY_SCORE, ENUM_NR_ITEMS} SORT_TYPE_T;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self updateUI];
 }
 
 - (void)updateUI
