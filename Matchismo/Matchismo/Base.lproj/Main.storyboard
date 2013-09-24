@@ -909,6 +909,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Results" id="afL-CT-phF"/>
+                    <connections>
+                        <outlet property="display" destination="Apg-St-rcT" id="cM9-cU-FQ8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3oK-5l-xbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
