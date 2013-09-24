@@ -172,6 +172,7 @@
     self.historySlider.maximumValue = 1.0;
     self.historySlider.value = self.historySlider.maximumValue;
     self.historySlider.enabled = NO;
+    self.gameResults = nil;
     [self updateUI];
 }
 
