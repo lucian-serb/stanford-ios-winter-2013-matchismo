@@ -53,6 +53,22 @@
     
     return allResults;
 }
+
++ (NSArray *)allGamesResultsSortedByDate
+{
+    return [[self allGamesResults] sortedArrayUsingSelector:@selector(compareDate:)];
+}
+
++ (NSArray *)allGamesResultsSortedByDuration
+{
+    return [[self allGamesResults] sortedArrayUsingSelector:@selector(compareDuration:)];
+}
+
++ (NSArray *)allGamesResultsSortedByScore
+{
+    return [[self allGamesResults] sortedArrayUsingSelector:@selector(compareScore:)];
+}
+
 - (id)initFromPropertyList:(id)plist
 {
     self = [self init];
