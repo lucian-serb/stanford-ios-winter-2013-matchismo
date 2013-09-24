@@ -18,6 +18,15 @@
 @implementation GameResults
 
 
+#define START_KEY @"StartDate"
+#define STOP_KEY @"StopDate"
+#define SCORE_KEY @"Score"
+
+- (id)asPropertyList
+{
+    return @{START_KEY: self.start, STOP_KEY: self.stop, SCORE_KEY: @(self.score)};
+}
+
 - (id)init
 {
     self = [super init];
