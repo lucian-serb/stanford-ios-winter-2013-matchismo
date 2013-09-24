@@ -42,6 +42,29 @@
     return @{START_KEY: self.start, STOP_KEY: self.stop, SCORE_KEY: @(self.score)};
 }
 
+- (id)initFromPropertyList:(id)plist
+{
+    self = [self init];
+    
+    if (self) {
+        if ([plist isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *resultsDict = (NSDictionary *)plist;
+            _start = resultsDict[START_KEY];
+            _stop = resultsDict[STOP_KEY];
+            _score = [resultsDict[SCORE_KEY] integerValue];
+            
+            if (!_start || !_stop) {
+                return nil;
+            }
+            
+        } else {
+            return nil;
+        }
+    }
+    
+    return self;
+}
+
 - (id)init
 {
     self = [super init];
