@@ -9,6 +9,7 @@
 #import "CardGameViewController.h"
 #import "CardMatchingGame.h"
 #import "PlayingCardDeck.h"
+#import "GameResults.h"
 
 @interface CardGameViewController ()
 
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *gameModeSelector;
 @property (strong, nonatomic) NSMutableArray *resultArray;
 @property (weak, nonatomic) IBOutlet UISlider *historySlider;
+@property (strong, nonatomic) GameResults *gameResults;
 
 @end
 
@@ -126,6 +128,15 @@
     }
     
     return _game;
+}
+
+- (GameResults *)gameResults
+{
+    if (!_gameResults) {
+        _gameResults = [[GameResults alloc] init];
+    }
+    
+    return _gameResults;
 }
 
 - (void)setCardButtons:(NSArray *)cardButtons
