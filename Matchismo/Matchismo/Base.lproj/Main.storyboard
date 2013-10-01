@@ -918,7 +918,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Results" id="afL-CT-phF"/>
+                    <tabBarItem key="tabBarItem" title="Results" image="tab3.png" id="afL-CT-phF"/>
                     <connections>
                         <outlet property="display" destination="Apg-St-rcT" id="cM9-cU-FQ8"/>
                     </connections>
@@ -953,6 +953,7 @@
         <image name="cardback.jpg" width="64" height="81"/>
         <image name="tab1.png" width="30" height="30"/>
         <image name="tab2.png" width="30" height="30"/>
+        <image name="tab3.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
