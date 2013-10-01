@@ -236,7 +236,7 @@
     Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:sender]];
     
     if (card.isFaceUp) {
-        self.gameResults.score = self.game.score;
+        [self.gameResults setScore:self.game.score forKey:ALL_SET_RESULTS_KEY];
     }
 }
 
