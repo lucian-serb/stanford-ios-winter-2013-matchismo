@@ -12,23 +12,23 @@
 
 @property (readwrite, nonatomic) NSDate *start;
 @property (readwrite, nonatomic) NSDate *stop;
+@property (readwrite, nonatomic) NSInteger score;
+@property (strong, nonatomic) NSString *gameType;
 
 @end
 
 @implementation GameResults
 
-#define ALL_RESULTS_KEY @"GameResults_ALL"
-
 - (void)synchronize
 {
-    NSMutableDictionary *mutableGameResultsFromUserDefaults = [[[NSUserDefaults standardUserDefaults] dictionaryForKey: ALL_RESULTS_KEY] mutableCopy];
+    NSMutableDictionary *mutableGameResultsFromUserDefaults = [[[NSUserDefaults standardUserDefaults] dictionaryForKey: self.gameType] mutableCopy];
     
     if (!mutableGameResultsFromUserDefaults) {
         mutableGameResultsFromUserDefaults = [[NSMutableDictionary alloc] init];
     }
     
     mutableGameResultsFromUserDefaults[[self.start description]] = [self asPropertyList];
-    [[NSUserDefaults standardUserDefaults] setObject:mutableGameResultsFromUserDefaults forKey:ALL_RESULTS_KEY];
+    [[NSUserDefaults standardUserDefaults] setObject:mutableGameResultsFromUserDefaults forKey:self.gameType];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
@@ -42,11 +42,11 @@
     return @{START_KEY: self.start, STOP_KEY: self.stop, SCORE_KEY: @(self.score)};
 }
 
-+ (NSArray *)allGamesResults
++ (NSArray *)allGamesResultsForKey:(NSString *)key
 {
     NSMutableArray *allResults = [[NSMutableArray alloc] init];
     
-    for (id plist in [[[NSUserDefaults standardUserDefaults] dictionaryForKey:ALL_RESULTS_KEY] allValues]) {
+    for (id plist in [[[NSUserDefaults standardUserDefaults] dictionaryForKey:key] allValues]) {
         GameResults *results = [[GameResults alloc] initFromPropertyList:plist];
         [allResults addObject:results];
     }
@@ -81,19 +81,19 @@
     return NSOrderedSame;
 }
 
-+ (NSArray *)allGamesResultsSortedByDate
++ (NSArray *)allGamesResultsSortedByDateForKey:(NSString *)key
 {
-    return [[self allGamesResults] sortedArrayUsingSelector:@selector(compareDate:)];
+    return [[self allGamesResultsForKey:key] sortedArrayUsingSelector:@selector(compareDate:)];
 }
 
-+ (NSArray *)allGamesResultsSortedByDuration
++ (NSArray *)allGamesResultsSortedByDurationForKey:(NSString *)key
 {
-    return [[self allGamesResults] sortedArrayUsingSelector:@selector(compareDuration:)];
+    return [[self allGamesResultsForKey:key] sortedArrayUsingSelector:@selector(compareDuration:)];
 }
 
-+ (NSArray *)allGamesResultsSortedByScore
++ (NSArray *)allGamesResultsSortedByScoreForKey:(NSString *)key
 {
-    return [[self allGamesResults] sortedArrayUsingSelector:@selector(compareScore:)];
+    return [[self allGamesResultsForKey:key] sortedArrayUsingSelector:@selector(compareScore:)];
 }
 
 - (id)initFromPropertyList:(id)plist
@@ -131,6 +131,15 @@
     return self;
 }
 
+- (NSString *)gameType
+{
+    if (!_gameType) {
+        _gameType = ALL_CARD_RESULTS_KEY;
+    }
+    
+    return _gameType;
+}
+
 - (NSTimeInterval )duration
 {
     return [self.stop timeIntervalSinceDate:self.start];
@@ -141,6 +150,12 @@
     _score = score;
     self.stop = [NSDate date];
     [self synchronize];
+}
+
+- (void)setScore:(NSInteger)score forKey:(NSString *)key
+{
+    self.gameType = key;
+    self.score = score;
 }
 
 @end
