@@ -15,6 +15,7 @@ typedef enum {BY_DATE, BY_DURATION, BY_SCORE, ENUM_NR_ITEMS} SORT_TYPE_T;
 
 @property (weak, nonatomic) IBOutlet UITextView *display;
 @property (nonatomic) SORT_TYPE_T sortType;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *resultsSelector;
 
 @end
 
@@ -62,13 +63,25 @@ typedef enum {BY_DATE, BY_DURATION, BY_SCORE, ENUM_NR_ITEMS} SORT_TYPE_T;
     
     switch (self.sortType) {
         case BY_SCORE:
-            allGameResults = [GameResults allGamesResultsSortedByScore];
+            if (self.resultsSelector.selectedSegmentIndex == 0) {
+                allGameResults = [GameResults allGamesResultsSortedByScoreForKey:ALL_CARD_RESULTS_KEY];
+            } else {
+                allGameResults = [GameResults allGamesResultsSortedByScoreForKey :ALL_SET_RESULTS_KEY];
+            }
             break;
         case BY_DURATION:
-            allGameResults = [GameResults allGamesResultsSortedByDuration];
+            if (self.resultsSelector.selectedSegmentIndex == 0) {
+                allGameResults = [GameResults allGamesResultsSortedByDurationForKey:ALL_CARD_RESULTS_KEY];
+            } else {
+                allGameResults = [GameResults allGamesResultsSortedByDurationForKey:ALL_SET_RESULTS_KEY];
+            }
             break;
         default:
-            allGameResults = [GameResults allGamesResultsSortedByDate];
+            if (self.resultsSelector.selectedSegmentIndex == 0) {
+                allGameResults = [GameResults allGamesResultsSortedByDateForKey:ALL_CARD_RESULTS_KEY];
+            } else {
+                allGameResults = [GameResults allGamesResultsSortedByDateForKey:ALL_SET_RESULTS_KEY];
+            }
             break;
     }
     
@@ -107,6 +120,11 @@ typedef enum {BY_DATE, BY_DURATION, BY_SCORE, ENUM_NR_ITEMS} SORT_TYPE_T;
 - (IBAction)sortByScore
 {
     self.sortType = BY_SCORE;
+    [self updateUI];
+}
+
+- (IBAction)selectResults
+{
     [self updateUI];
 }
 

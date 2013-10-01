@@ -869,7 +869,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Score: 0 (1/1/11 0:00am, 0s)" id="Apg-St-rcT">
-                                <rect key="frame" x="20" y="20" width="280" height="340"/>
+                                <rect key="frame" x="20" y="20" width="280" height="309"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -914,6 +914,17 @@
                                     <action selector="sortByDuration" destination="X88-qI-n6f" eventType="touchUpInside" id="oQT-zf-m8l"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Um1-gp-NLb">
+                                <rect key="frame" x="77" y="337" width="167" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Card Game"/>
+                                    <segment title="Set Game"/>
+                                </segments>
+                                <connections>
+                                    <action selector="selectResults" destination="X88-qI-n6f" eventType="valueChanged" id="vYV-qt-lUp"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -921,6 +932,7 @@
                     <tabBarItem key="tabBarItem" title="Results" image="tab3.png" id="afL-CT-phF"/>
                     <connections>
                         <outlet property="display" destination="Apg-St-rcT" id="cM9-cU-FQ8"/>
+                        <outlet property="resultsSelector" destination="Um1-gp-NLb" id="mZw-ge-9bp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3oK-5l-xbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
