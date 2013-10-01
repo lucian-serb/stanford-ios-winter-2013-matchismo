@@ -9,6 +9,7 @@
 #import "SetGameViewController.h"
 #import "SetCardDeck.h"
 #import "SetGame.h"
+#import "GameResults.h"
 
 @interface SetGameViewController ()
 
@@ -20,6 +21,7 @@
 @property (nonatomic) NSInteger flipCount;
 @property (weak, nonatomic) IBOutlet UISlider *historySlider;
 @property (strong, nonatomic) NSMutableArray *resultArray;
+@property (strong, nonatomic) GameResults *gameResults;
 
 @end
 
@@ -62,6 +64,15 @@
     }
     
     return _game;
+}
+
+- (GameResults *)gameResults
+{
+    if (!_gameResults) {
+        _gameResults = [[GameResults alloc] init];
+    }
+    
+    return _gameResults;
 }
 
 - (void)setCardButtons:(NSArray *)cardButtons
@@ -213,6 +224,7 @@
     self.historySlider.maximumValue = 1.0;
     self.historySlider.value = self.historySlider.maximumValue;
     self.historySlider.enabled = NO;
+    self.gameResults = nil;
     [self updateUI];
 }
 
@@ -221,6 +233,11 @@
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
     [self updateUI];
+    Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:sender]];
+    
+    if (card.isFaceUp) {
+        self.gameResults.score = self.game.score;
+    }
 }
 
 - (IBAction)moveThroughHistory:(UISlider *)sender
