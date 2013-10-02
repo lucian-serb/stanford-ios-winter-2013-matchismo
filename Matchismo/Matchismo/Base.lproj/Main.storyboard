@@ -865,10 +865,11 @@
             <objects>
                 <viewController id="OBm-xk-NfD" customClass="SettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ubd-9q-H0u">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Settings" id="w39-uC-3Hf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aCJ-OJ-l5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
