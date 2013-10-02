@@ -11,19 +11,11 @@
 @implementation Settings
 
 #define ALL_SETTINGS_KEY @"Settings_ALL"
-#define GENERAL_SETTINGS @"Settings_GENERAL"
 #define GAME_TYPE_KEY @"GameType"
 
 - (void)synchronize
 {
-    NSMutableDictionary *mutableSettingsFromUserDefaults = [[[NSUserDefaults standardUserDefaults] dictionaryForKey: ALL_SETTINGS_KEY] mutableCopy];
-    
-    if (!mutableSettingsFromUserDefaults) {
-        mutableSettingsFromUserDefaults = [[NSMutableDictionary alloc] init];
-    }
-    
-    mutableSettingsFromUserDefaults[GENERAL_SETTINGS] = [self asPropertyList];
-    [[NSUserDefaults standardUserDefaults] setObject:mutableSettingsFromUserDefaults forKey:ALL_SETTINGS_KEY];
+    [[NSUserDefaults standardUserDefaults] setObject:[self asPropertyList] forKey:ALL_SETTINGS_KEY];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
@@ -39,8 +31,8 @@
     
     if (self) {
         if ([plist isKindOfClass:[NSDictionary class]]) {
-            NSDictionary *resultsDict = (NSDictionary *)plist;
-            _gameType = [resultsDict[GAME_TYPE_KEY] unsignedIntegerValue];
+            NSDictionary *settingsDict = (NSDictionary *)plist;
+            _gameType = [settingsDict[GAME_TYPE_KEY] unsignedIntegerValue];
         } else {
             return nil;
         }
@@ -66,16 +58,12 @@
     [self synchronize];
 }
 
-+ (NSArray *)allSettings
++ (Settings *)allSettings
 {
-    NSMutableArray *allSettings = [[NSMutableArray alloc] init];
+    NSDictionary *plist = [[NSUserDefaults standardUserDefaults] dictionaryForKey:ALL_SETTINGS_KEY];
+    Settings *settings = [[Settings alloc] initFromPropertyList:plist];
     
-    for (id plist in [[[NSUserDefaults standardUserDefaults] dictionaryForKey:ALL_SETTINGS_KEY] allValues]) {
-        Settings *settings = [[Settings alloc] initFromPropertyList:plist];
-        [allSettings addObject:settings];
-    }
-    
-    return allSettings;
+    return settings;
 }
 
 @end
