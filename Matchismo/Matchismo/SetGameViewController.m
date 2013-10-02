@@ -156,9 +156,8 @@
         
         if (self.game.gameStatus == 0) {
             SetCard *card = [self.game.flippedCards lastObject];
-            [labelText appendAttributedString:[self attributedStringFromString:@"Flipped up "]];
             [labelText appendAttributedString:[self asAttributedString:card]];
-            [labelText appendAttributedString:[self attributedStringFromString:@"."]];
+            [labelText appendAttributedString:[self attributedStringFromString:@" selected."]];
         } else {
             NSMutableAttributedString *text = [[self attributedStringFromString:@""] mutableCopy];
             
@@ -201,7 +200,7 @@
         self.historySlider.value = self.historySlider.maximumValue;
         self.resultLabel.attributedText = labelText;
     } else {
-        NSAttributedString *labelText = [self attributedStringFromString:@"Start by flipping a card."];
+        NSAttributedString *labelText = [self attributedStringFromString:@"Start by selecting a card."];
         self.resultLabel.attributedText = labelText;
         [self.resultArray addObject:labelText];
     }
