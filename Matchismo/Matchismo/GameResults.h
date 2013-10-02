@@ -14,6 +14,7 @@
 
 #define ALL_SET_RESULTS_KEY @"SetGameResults_ALL"
 
++ (void)resetResultsForKey:(NSString *)key;
 + (NSArray *)allGamesResultsForKey:(NSString *)key;
 + (NSArray *)allGamesResultsSortedByDateForKey:(NSString *)key;
 + (NSArray *)allGamesResultsSortedByDurationForKey:(NSString *)key;

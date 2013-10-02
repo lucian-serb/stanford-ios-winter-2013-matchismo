@@ -42,6 +42,12 @@
     return @{START_KEY: self.start, STOP_KEY: self.stop, SCORE_KEY: @(self.score)};
 }
 
++ (void)resetResultsForKey:(NSString *)key
+{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 + (NSArray *)allGamesResultsForKey:(NSString *)key
 {
     NSMutableArray *allResults = [[NSMutableArray alloc] init];
