@@ -8,8 +8,12 @@
 
 #import "SettingsViewController.h"
 #import "GameResults.h"
+#import "Settings.h"
 
 @interface SettingsViewController ()
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *gameTypeSetting;
+@property (strong, nonatomic) Settings *settings;
 
 @end
 
@@ -36,12 +40,22 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.gameTypeSetting.selectedSegmentIndex = [Settings allSettings].gameType;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (Settings *)settings
+{
+    if (!_settings) {
+        _settings = [[Settings alloc] init];
+    }
+    
+    return _settings;
 }
 
 - (IBAction)resetCardGameResults
@@ -52,6 +66,11 @@
 - (IBAction)resetSetGameResults
 {
     [GameResults resetResultsForKey:ALL_SET_RESULTS_KEY];
+}
+
+- (IBAction)changeGameTypeSetting:(UISegmentedControl *)sender
+{
+    self.settings.gameType = sender.selectedSegmentIndex;
 }
 
 @end

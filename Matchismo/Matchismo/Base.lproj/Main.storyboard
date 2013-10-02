@@ -875,6 +875,9 @@
                                     <segment title="2 Card Game"/>
                                     <segment title="3 Card Game"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changeGameTypeSetting:" destination="OBm-xk-NfD" eventType="valueChanged" id="6GI-GN-3Be"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Card Matching Mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="elQ-fa-C9G">
                                 <rect key="frame" x="47" y="72" width="227" height="21"/>
@@ -908,6 +911,9 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Settings" image="tab4.png" id="w39-uC-3Hf"/>
+                    <connections>
+                        <outlet property="gameTypeSetting" destination="alA-u3-bxJ" id="sxg-UH-cxy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aCJ-OJ-l5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
