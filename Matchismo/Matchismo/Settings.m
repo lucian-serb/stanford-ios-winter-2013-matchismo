@@ -10,11 +10,13 @@
 
 @implementation Settings
 
-#define GAMETYPE_KEY @"GameType"
+#define GAME_TYPE_KEY @"GameType"
+
+
 
 - (id)asPropertyList
 {
-    return @{GAMETYPE_KEY: @(self.gameType)};
+    return @{GAME_TYPE_KEY: @(self.gameType)};
 }
 
 - (id)initFromPropertyList:(id)plist
@@ -24,7 +26,7 @@
     if (self) {
         if ([plist isKindOfClass:[NSDictionary class]]) {
             NSDictionary *resultsDict = (NSDictionary *)plist;
-            _gameType = [resultsDict[GAMETYPE_KEY] unsignedIntegerValue];
+            _gameType = [resultsDict[GAME_TYPE_KEY] unsignedIntegerValue];
         } else {
             return nil;
         }
