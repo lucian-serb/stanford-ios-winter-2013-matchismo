@@ -94,7 +94,7 @@ typedef enum {BY_DATE, BY_DURATION, BY_SCORE, ENUM_NR_ITEMS} SORT_TYPE_T;
     }
     
     if ([displayText length] == 0) {
-        self.display.text = @"No results yet... Start playing a game.";
+        self.display.text = @"No results yet... Start playing the game";
     } else {
         self.display.text = displayText;
     }
