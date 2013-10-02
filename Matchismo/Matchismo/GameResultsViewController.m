@@ -93,7 +93,11 @@ typedef enum {BY_DATE, BY_DURATION, BY_SCORE, ENUM_NR_ITEMS} SORT_TYPE_T;
         displayText = [displayText stringByAppendingFormat:@"Score: %d (%@, %.0fs)\n", gameResults.score, [dateFormatter stringFromDate:gameResults.start], gameResults.duration];
     }
     
-    self.display.text = displayText;
+    if ([displayText length] == 0) {
+        self.display.text = @"No results yet... Start playing a game.";
+    } else {
+        self.display.text = displayText;
+    }
 }
 
 - (void)setSortType:(SORT_TYPE_T)sortType
