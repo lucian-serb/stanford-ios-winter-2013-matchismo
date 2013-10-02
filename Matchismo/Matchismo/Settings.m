@@ -12,6 +12,11 @@
 
 #define GAMETYPE_KEY @"GameType"
 
+- (id)asPropertyList
+{
+    return @{GAMETYPE_KEY: @(self.gameType)};
+}
+
 - (id)initFromPropertyList:(id)plist
 {
     self = [self init];
