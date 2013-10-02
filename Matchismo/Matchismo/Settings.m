@@ -10,9 +10,23 @@
 
 @implementation Settings
 
+#define ALL_SETTINGS_KEY @"Settings_ALL"
+#define GENERAL_SETTINGS @"Settings_GENERAL"
 #define GAME_TYPE_KEY @"GameType"
 
-
+- (void)synchronize
+{
+    NSMutableDictionary *mutableSettingsFromUserDefaults = [[[NSUserDefaults standardUserDefaults] dictionaryForKey: ALL_SETTINGS_KEY] mutableCopy];
+    
+    if (!mutableSettingsFromUserDefaults) {
+        mutableSettingsFromUserDefaults = [[NSMutableDictionary alloc] init];
+    }
+    
+    mutableSettingsFromUserDefaults[GENERAL_SETTINGS] = [self asPropertyList];
+    [[NSUserDefaults standardUserDefaults] setObject:mutableSettingsFromUserDefaults forKey:ALL_SETTINGS_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
 
 - (id)asPropertyList
 {
