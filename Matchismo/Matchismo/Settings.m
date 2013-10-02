@@ -60,4 +60,16 @@
     return self;
 }
 
++ (NSArray *)allSettings
+{
+    NSMutableArray *allSettings = [[NSMutableArray alloc] init];
+    
+    for (id plist in [[[NSUserDefaults standardUserDefaults] dictionaryForKey:ALL_SETTINGS_KEY] allValues]) {
+        Settings *settings = [[Settings alloc] initFromPropertyList:plist];
+        [allSettings addObject:settings];
+    }
+    
+    return allSettings;
+}
+
 @end

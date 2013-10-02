@@ -10,6 +10,8 @@
 
 @interface Settings : NSObject
 
++ (NSArray *)allSettings;
+
 @property (nonatomic) NSUInteger gameType;
 
 @end
