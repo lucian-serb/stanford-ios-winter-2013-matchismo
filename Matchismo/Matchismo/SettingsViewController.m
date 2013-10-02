@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "GameResults.h"
 
 @interface SettingsViewController ()
 
@@ -41,6 +42,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)resetCardGameResults
+{
+    [GameResults resetResultsForKey:ALL_CARD_RESULTS_KEY];
+}
+
+- (IBAction)resetSetGameResults
+{
+    [GameResults resetResultsForKey:ALL_SET_RESULTS_KEY];
 }
 
 @end
