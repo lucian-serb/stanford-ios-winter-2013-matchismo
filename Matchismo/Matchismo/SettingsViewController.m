@@ -14,12 +14,20 @@
 
 @implementation SettingsViewController
 
+- (void)setup
+{
+    // add initialization stuff here
+}
+
+- (void)awakeFromNib
+{
+    [self setup];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
+    [self setup];
     return self;
 }
 
