@@ -60,6 +60,12 @@
     return self;
 }
 
+- (void)setGameType:(NSUInteger)gameType
+{
+    _gameType = gameType;
+    [self synchronize];
+}
+
 + (NSArray *)allSettings
 {
     NSMutableArray *allSettings = [[NSMutableArray alloc] init];
