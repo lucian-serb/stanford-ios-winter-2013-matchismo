@@ -884,9 +884,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tsq-2j-j6B">
-                                <rect key="frame" x="54" y="221" width="213" height="30"/>
+                                <rect key="frame" x="48" y="221" width="224" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="RESET CARD GAME RESULTS">
+                                <state key="normal" title="RESET MATCH GAME RESULTS">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -968,10 +968,10 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Um1-gp-NLb">
-                                <rect key="frame" x="77" y="337" width="167" height="29"/>
+                                <rect key="frame" x="68" y="337" width="185" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="Card Game"/>
+                                    <segment title="Match Game"/>
                                     <segment title="Set Game"/>
                                 </segments>
                                 <connections>
