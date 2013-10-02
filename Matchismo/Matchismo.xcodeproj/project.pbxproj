@@ -42,6 +42,7 @@
 		36F9CF4017FC08E8001CAC7F /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F9CF3F17FC08E8001CAC7F /* SettingsViewController.m */; };
 		36F9CF4317FC1713001CAC7F /* tab4.png in Resources */ = {isa = PBXBuildFile; fileRef = 36F9CF4117FC1713001CAC7F /* tab4.png */; };
 		36F9CF4417FC1713001CAC7F /* tab4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36F9CF4217FC1713001CAC7F /* tab4@2x.png */; };
+		36F9CF4717FC42AB001CAC7F /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F9CF4617FC42AB001CAC7F /* Settings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,8 @@
 		36F9CF3F17FC08E8001CAC7F /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		36F9CF4117FC1713001CAC7F /* tab4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab4.png; path = Resources/tab4.png; sourceTree = "<group>"; };
 		36F9CF4217FC1713001CAC7F /* tab4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab4@2x.png"; path = "Resources/tab4@2x.png"; sourceTree = "<group>"; };
+		36F9CF4517FC42AB001CAC7F /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		36F9CF4617FC42AB001CAC7F /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 				366D954317F1CEE8009846BE /* GameResults.m */,
 				366D953F17F1CC61009846BE /* GameResultsViewController.h */,
 				366D954017F1CC61009846BE /* GameResultsViewController.m */,
+				36F9CF4517FC42AB001CAC7F /* Settings.h */,
+				36F9CF4617FC42AB001CAC7F /* Settings.m */,
 				36F9CF3E17FC08E8001CAC7F /* SettingsViewController.h */,
 				36F9CF3F17FC08E8001CAC7F /* SettingsViewController.m */,
 				36658A6B17C5563400AAE48D /* Images.xcassets */,
@@ -368,6 +373,7 @@
 				36087A6817E31CA20096BD2C /* SetGame.m in Sources */,
 				36658A6417C5563400AAE48D /* CardGameAppDelegate.m in Sources */,
 				36087A6217E307840096BD2C /* SetCardDeck.m in Sources */,
+				36F9CF4717FC42AB001CAC7F /* Settings.m in Sources */,
 				366D954417F1CEE8009846BE /* GameResults.m in Sources */,
 				36658A6A17C5563400AAE48D /* CardGameViewController.m in Sources */,
 				36127F6017E1CB7B008BD08D /* SetCard.m in Sources */,
