@@ -10,6 +10,7 @@
 #import "CardMatchingGame.h"
 #import "PlayingCardDeck.h"
 #import "GameResults.h"
+#import "Settings.h"
 
 @interface CardGameViewController ()
 
@@ -20,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property (nonatomic) NSUInteger gameMode;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *gameModeSelector;
 @property (strong, nonatomic) NSMutableArray *resultArray;
 @property (weak, nonatomic) IBOutlet UISlider *historySlider;
 @property (strong, nonatomic) GameResults *gameResults;
@@ -33,6 +33,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self changeGameMode];
 }
 
 - (void)didReceiveMemoryWarning
@@ -154,11 +155,6 @@
 - (IBAction)flipCard:(UIButton *)sender
 {
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
-    
-    if (self.flipCount == 0) {
-        self.gameModeSelector.enabled = NO;
-    }
-    
     self.flipCount++;
     [self updateUI];
     Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:sender]];
@@ -172,20 +168,22 @@
 {
     self.game = nil;
     self.flipCount = 0;
-    self.gameModeSelector.enabled = YES;
     self.resultArray = nil;
     self.historySlider.maximumValue = 1.0;
     self.historySlider.value = self.historySlider.maximumValue;
     self.historySlider.enabled = NO;
     self.gameResults = nil;
+    [self changeGameMode];
     [self updateUI];
 }
 
-- (IBAction)changeGameMode:(UISegmentedControl *)sender
+- (void)changeGameMode
 {
-    if (sender.selectedSegmentIndex == 0) {
+    NSUInteger gameType = [Settings allSettings].gameType;
+    
+    if (gameType == 0) {
         self.gameMode = 2;
-    } else if (sender.selectedSegmentIndex == 1) {
+    } else if (gameType == 1) {
         self.gameMode = 3;
     }
     
